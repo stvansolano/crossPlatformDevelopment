@@ -1,7 +1,9 @@
 # Cross Platform Development with Xamarin Forms
 ==============
-A set of examples for introducing Xamarin Forms including:
+A set of examples for developing apps across different mobile OS including Android, iOS(in progress) and Windows Phone (in progress) using Xamarin Forms.
 
+
+Index:
 - Hello World
 - Meet Xamarin Forms
 - Data Binding Basics (coming soon)
