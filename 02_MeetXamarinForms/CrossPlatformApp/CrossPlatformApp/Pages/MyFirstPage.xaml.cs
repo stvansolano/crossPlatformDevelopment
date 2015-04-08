@@ -20,6 +20,7 @@
 			}
 
 			DisplayAlert ("We salute", text, "Close");
+			HelloLabel.Text = text;
 		}
 	}
 }

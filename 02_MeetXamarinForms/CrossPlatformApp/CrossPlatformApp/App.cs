@@ -12,7 +12,7 @@ namespace CrossPlatformApp
 		public App()
 		{
 			// The root page of your application
-			MainPage = new ContentPage
+			MainPage = new MyFirstPage(); /*ContentPage
 			{
 				Content = new StackLayout
 				{
@@ -24,7 +24,7 @@ namespace CrossPlatformApp
 						}
 					}
 				}
-			};
+			};*/
 		}
 
 		protected override void OnStart()
