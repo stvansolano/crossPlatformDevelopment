@@ -34,11 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Pages\MyFirstPage.xaml.cs">
-      <DependentUpon>MyFirstPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MyTabbedPage.xaml.cs">
-      <DependentUpon>MyTabbedPage.xaml</DependentUpon>
+    <Compile Include="Pages\ToDoMainPage.xaml.cs">
+      <DependentUpon>ToDoMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,13 +51,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\MyFirstPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <EmbeddedResource Include="Pages\ToDoMainPage.xaml">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\MyTabbedPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

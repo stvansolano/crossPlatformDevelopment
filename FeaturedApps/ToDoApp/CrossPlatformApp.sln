@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPlatformApp.iOS", "Cro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossPlatformApp.Droid", "CrossPlatformApp\CrossPlatformApp.Droid\CrossPlatformApp.Droid.csproj", "{C0012770-781B-409F-9703-36786AF16D10}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platform Projects", "Platform Projects", "{FFD4EBE1-1916-40E5-A543-D2D17FF3163C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -114,5 +116,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0DF1720B-AB05-47DE-9813-3CD878463412} = {FFD4EBE1-1916-40E5-A543-D2D17FF3163C}
+		{C0012770-781B-409F-9703-36786AF16D10} = {FFD4EBE1-1916-40E5-A543-D2D17FF3163C}
 	EndGlobalSection
 EndGlobal
