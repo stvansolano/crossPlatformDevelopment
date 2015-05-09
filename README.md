@@ -6,11 +6,11 @@ A set of examples for developing apps across different mobile OS including Andro
 Index:
 - Hello World
 - Meet Xamarin Forms
-- Data Binding Basics (coming soon)
-- Triggers, DataTemplates and ResourceDictionaries (coming soon)
-- Events & Routing (coming soon)
 - MVVM Pattern (coming soon)
-
+- Events, Routing & Navigation (coming soon)
+- Data Binding Basics (coming soon)
+- Async in C# with Xamarin
+- Triggers, DataTemplates and ResourceDictionaries (coming soon)
 
 Authors
 ------
