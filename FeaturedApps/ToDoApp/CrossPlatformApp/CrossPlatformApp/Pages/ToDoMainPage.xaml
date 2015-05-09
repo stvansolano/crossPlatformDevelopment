@@ -4,6 +4,6 @@
 			 xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
              x:Class="CrossPlatformApp.ToDoMainPage">
 	<StackLayout>
-		<local:ToDoList />
+		<local:ToDoList x:Name="MainList" />
 	</StackLayout>
 </ContentPage>

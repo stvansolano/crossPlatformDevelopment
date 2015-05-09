@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPlatformApp.ToDoList">
 	<ContentView.Content>
-		<Label Text="Test"></Label>
+		<StackLayout>
+			<Label Text="{Binding Path=Title}"></Label>
+			<ListView ItemsSource="{Binding Path=Elements}"
+					  IsGroupingEnabled="{Binding Path=IsGrouped}">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<TextCell Text="{Binding Path=ItemName}" Detail="{Binding Path=Description}" Command="{Binding Path=NavigateCommand}" />
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+		</StackLayout>
 	</ContentView.Content>
 </ContentView>

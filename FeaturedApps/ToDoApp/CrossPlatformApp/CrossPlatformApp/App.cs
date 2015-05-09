@@ -5,15 +5,17 @@
 
 	public class App : Application
 	{
+		private ToDoMainPage _mainPage;
 		public App()
 		{
+			_mainPage = new ToDoMainPage();
 			// The root page of your application
-			MainPage = new ToDoMainPage { BindingContext = new TodoListViewModel() { Title = "My To-do list" } };
+			MainPage = _mainPage;
 		}
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+			_mainPage.Start();
 		}
 
 		protected override void OnSleep()
