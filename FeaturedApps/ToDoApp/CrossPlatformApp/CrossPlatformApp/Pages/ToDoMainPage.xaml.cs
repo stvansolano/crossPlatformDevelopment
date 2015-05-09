@@ -3,7 +3,7 @@
 	using Shared.ViewModels;
 	using Xamarin.Forms;
 
-	public partial class ToDoMainPage : ContentPage
+	public partial class ToDoMainPage
 		//MasterDetailPage
 		//NavigationPage
 		//TabbedPage
