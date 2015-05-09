@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
              x:Class="CrossPlatformApp.ToDoMainPage">
-	<ContentPage.Content>
-		<StackLayout VerticalOptions="CenterAndExpand">
-			<Entry x:Name="EntryName" />
-			<Button Text="Salute" Clicked="OnSalute" />
-
-			<Label x:Name="HelloLabel" XAlign="Center">
-				<Label.Text>
-					Hello World!
-				</Label.Text>
-			</Label>
-		</StackLayout>
-	</ContentPage.Content>
+	<StackLayout>
+		<local:ToDoList />
+	</StackLayout>
 </ContentPage>

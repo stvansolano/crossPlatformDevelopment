@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
-
-namespace CrossPlatformApp
+﻿namespace CrossPlatformApp
 {
+	using Shared.ViewModels;
+	using Xamarin.Forms;
+
 	public class App : Application
 	{
 		public App()
 		{
 			// The root page of your application
-			MainPage = new ToDoMainPage();
+			MainPage = new ToDoMainPage { BindingContext = new TodoListViewModel() { Title = "My To-do list" } };
 		}
 
 		protected override void OnStart()
