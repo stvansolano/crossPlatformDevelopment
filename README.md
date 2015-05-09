@@ -7,7 +7,7 @@ Index:
 - Hello World
 - Meet Xamarin Forms
 - MVVM Pattern (coming soon)
-- Events, Routing & Navigation (coming soon)
+- Events, Commands & Navigation (coming soon)
 - Data Binding Basics (coming soon)
 - Async in C# with Xamarin
 - Triggers, DataTemplates and ResourceDictionaries (coming soon)
