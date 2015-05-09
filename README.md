@@ -9,8 +9,9 @@ Index:
 - MVVM Pattern (coming soon)
 - Events, Commands & Navigation (coming soon)
 - Data Binding Basics (coming soon)
-- Async in C# with Xamarin
+- Async in C# with Xamarin (coming soon)
 - Triggers, DataTemplates and ResourceDictionaries (coming soon)
+- IoC and dependencies (coming soon)
 
 Authors
 ------
