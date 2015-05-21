@@ -4,12 +4,11 @@
              x:Class="CrossPlatformApp.ToDoList">
 	<ContentView.Content>
 		<StackLayout>
-			<Label Text="{Binding Path=Title}"></Label>
 			<ListView ItemsSource="{Binding Path=Elements}"
 					  IsGroupingEnabled="{Binding Path=IsGrouped}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
-							<TextCell Text="{Binding Path=ItemName}" Detail="{Binding Path=Description}" Command="{Binding Path=NavigateCommand}" />
+							<TextCell Text="{Binding Path=ItemName}" Detail="{Binding Path=DescriptionX}" Command="{Binding Path=NavigateCommand}" />
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>

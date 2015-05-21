@@ -27,5 +27,13 @@
 			get { return _navigateCommand; }
 			set { SetProperty(ref _navigateCommand, value, NAVIGATE_COMMAND_PROPERTY); }
 		}
-	}
+
+        public const string SAVE_COMMAND_PROPERTY = "SaveCommand";
+        private ICommand _saveCommand;
+        public ICommand SaveCommand
+        {
+            get { return _saveCommand; }
+            set { SetProperty(ref _saveCommand, value, SAVE_COMMAND_PROPERTY); }
+        }
+    }
 }

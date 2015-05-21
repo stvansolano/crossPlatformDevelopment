@@ -5,12 +5,12 @@
 
 	public class App : Application
 	{
-		private ToDoMainPage _mainPage;
+		private MainPage _mainPage;
 		public App()
 		{
-			_mainPage = new ToDoMainPage();
+            _mainPage = new MainPage();
 			// The root page of your application
-			MainPage = _mainPage;
+            MainPage = new NavigationPage(_mainPage);
 		}
 
 		protected override void OnStart()

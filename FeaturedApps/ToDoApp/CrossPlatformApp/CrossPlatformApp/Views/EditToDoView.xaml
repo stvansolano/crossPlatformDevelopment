@@ -2,10 +2,5 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPlatformApp.EditToDoView">
-	<StackLayout>
-		<Label Text="Name:" />
-		<Label Text="{Binding Path=ItemName}" />
-		<Label Text="Description:" />
-		<Label Text="{Binding Path=Description}" />
-	</StackLayout>
+	
 </ContentView>

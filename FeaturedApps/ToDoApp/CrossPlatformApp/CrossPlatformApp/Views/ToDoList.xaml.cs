@@ -41,10 +41,24 @@
 		{
 			foreach (var item in elements)
 			{
-				var editItem = item;
-				item.NavigateCommand = new Command(() => OnNavigate(editItem));
+                SetupCommands(item);
 			}
 		}
+
+        private void SetupCommands(TodoItemViewModel item)
+        {
+            item.NavigateCommand = new Command(() => OnNavigate(item));
+            item.SaveCommand = new Command(() => OnSave(item));
+        }
+
+        private void OnSave(TodoItemViewModel editItem)
+        {
+            if (ViewModel.Elements.Contains(editItem) == false)
+            {
+                ViewModel.Elements.Add(editItem);
+            }
+            Navigator.ReturnToMain();
+        }
 
 		private async void OnNavigate(TodoItemViewModel editItem)
 		{
@@ -56,5 +70,13 @@
 			{
 			}
 		}
-	}
+
+        internal TodoItemViewModel NewItem()
+        {
+            var newItem = new TodoItemViewModel { ItemName = "New item:" };
+            SetupCommands(newItem);
+
+            return newItem;
+        }
+    }
 }

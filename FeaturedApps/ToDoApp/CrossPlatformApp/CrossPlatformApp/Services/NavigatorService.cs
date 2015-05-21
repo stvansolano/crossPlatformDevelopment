@@ -18,18 +18,21 @@
 		{
 			if (item is TodoItemViewModel)
 			{
-				return NavigateToEdit<EditToDoView, TodoItemViewModel>(item);
+				return NavigateToEdit<EditPage>(item);
 			}
 			return null;
 		}
 
-		private Task NavigateToEdit<T, TContext>(object context)
-			where T : ContentView, new()
-			where TContext : class
+		private Task NavigateToEdit<TPage>(object context)
+            where TPage : Page, new()
 		{
-			var content = new T();
-
-			return Navigation.PushModalAsync(new NavigationPage(new ContentPage { Content = content, BindingContext = context }));
+            return Navigation.PushAsync(new TPage() { BindingContext = context});
 		}
-	}
+
+
+        public Task ReturnToMain()
+        {
+            return Navigation.PopToRootAsync();
+        }
+    }
 }
