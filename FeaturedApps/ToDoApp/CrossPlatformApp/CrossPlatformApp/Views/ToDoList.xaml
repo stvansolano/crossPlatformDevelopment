@@ -4,8 +4,9 @@
              x:Class="CrossPlatformApp.ToDoList">
 	<ContentView.Content>
 		<StackLayout>
-			<ListView ItemsSource="{Binding Path=Elements}"
-					  IsGroupingEnabled="{Binding Path=IsGrouped}">
+			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
+                IsGroupingEnabled="{Binding Path=IsGrouped}"
+                RefreshCommand="{Binding Path=RefreshCommand}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<TextCell Text="{Binding Path=ItemName}" Detail="{Binding Path=DescriptionX}" Command="{Binding Path=NavigateCommand}" />

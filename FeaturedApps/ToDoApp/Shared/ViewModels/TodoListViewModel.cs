@@ -1,18 +1,24 @@
 ﻿namespace Shared.ViewModels
 {
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
-	using System.Threading.Tasks;
+    using Shared.Infrastructure.Services;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using System.Windows.Input;
+    using System.Linq;
+    using Shared.Core;
 
 	public class TodoListViewModel : BaseViewModel
 	{
-		public TodoListViewModel()
+		public TodoListViewModel(IDataService dataServices)
 		{
 			_elements = new ObservableCollection<TodoItemViewModel>();
+            DataServices = dataServices;
 
             Title = "My To-Do list showcase";
 		}
+
+        public IDataService DataServices { get; set; }
 
 		public const string TITLE_PROPERTY = "Title";
 		private string _title = string.Empty;
@@ -29,31 +35,34 @@
             get { return _newItemCommand; }
             set { SetProperty(ref _newItemCommand, value, NEW_ITEM_COMMAND_PROPERTY); }
 		}
-
+        
 		private ObservableCollection<TodoItemViewModel> _elements;
 		public ObservableCollection<TodoItemViewModel> Elements
 		{
 			get { return _elements; }
 		}
 
-		public TodoItemViewModel[] LoadItems() 
-		{
-			return AddItems(FeedItems());
-		}
-
 		public Task<TodoItemViewModel[]> LoadItemsAsync()
 		{
-			return Task.Run(() => FeedItems()).ContinueWith(task => AddItems(task.Result));
+            Elements.Clear();
+			return FeedItems().ContinueWith(task => AddItems(task.Result));
 		}
 
-		private TodoItemViewModel[] FeedItems()
+		private Task<TodoItemViewModel[]> FeedItems()
 		{
-			return new TodoItemViewModel[] {
-				/*new TodoItemViewModel { ItemName = "Item #1", Description = "description", NavigateCommand = null },
-				new TodoItemViewModel { ItemName = "Item #2", Description = "description", NavigateCommand = null },
-				new TodoItemViewModel { ItemName = "Item #3", Description = "description", NavigateCommand = null }*/
-			};
+            if (DataServices == null)
+            {
+                return Task.Run(() => new TodoItemViewModel[0]);
+            }
+            var task = DataServices.GetToDosAsync();
+
+            return task.ContinueWith(nextTask => TransformItems(nextTask.Result));
 		}
+
+        private TodoItemViewModel[] TransformItems(IEnumerable<ToDoItem> result)
+        {
+            return result.Select(data => new TodoItemViewModel() { ItemName = data.title, Description = "User:" + data.id + "completed:" + data.completed }).ToArray();
+        }
 
 		private TodoItemViewModel[] AddItems(TodoItemViewModel[] result)
 		{
@@ -64,5 +73,5 @@
 
 			return result;
 		}
-	}
+    }
 }

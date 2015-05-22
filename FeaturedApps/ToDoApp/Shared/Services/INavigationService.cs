@@ -4,11 +4,7 @@
 
 	public interface INavigationService
 	{
-		/*
-		Task NavigateToEditAsync<T, TContext>(TContext item)
-			where T : class, new()
-			where TContext : class;*/
-		Task NavigateToEditAsync(object item);
+		Task NavigateToAsync(object context);
 
         Task ReturnToMain();
     }

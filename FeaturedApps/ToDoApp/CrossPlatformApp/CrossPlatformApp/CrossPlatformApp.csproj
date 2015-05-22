@@ -43,7 +43,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\NavigatorService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Views\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditToDoView.xaml.cs">
       <DependentUpon>EditToDoView.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <ProjectReference Include="..\..\Shared.Core\Shared.Core.csproj">
       <Project>{2EC9B5F5-45D7-459B-8DC0-E340CA446D6E}</Project>
       <Name>Shared.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared.WebServices\Shared.WebServices.csproj">
+      <Project>{45352643-aef4-4413-9085-bc723b900866}</Project>
+      <Name>Shared.WebServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Shared\Shared.Infrastructure.csproj">
       <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
@@ -111,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\EditPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MainMenuView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

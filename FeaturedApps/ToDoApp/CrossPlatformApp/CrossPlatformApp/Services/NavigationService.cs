@@ -5,25 +5,25 @@
 	using Xamarin.Forms;
 	using Shared.ViewModels;
 
-	public class NavigatorService : INavigationService
+	public class NavigationService : INavigationService
 	{
-		public NavigatorService(INavigation navigation)
+		public NavigationService(INavigation navigation)
 		{
 			Navigation = navigation;
 		}
 
 		protected INavigation Navigation { get; set; }
 
-		Task INavigationService.NavigateToEditAsync(object item)
+		Task INavigationService.NavigateToAsync(object context)
 		{
-			if (item is TodoItemViewModel)
+			if (context is TodoItemViewModel)
 			{
-				return NavigateToEdit<EditPage>(item);
+				return NavigateTo<EditPage>(context);
 			}
 			return null;
 		}
 
-		private Task NavigateToEdit<TPage>(object context)
+		private Task NavigateTo<TPage>(object context)
             where TPage : Page, new()
 		{
             return Navigation.PushAsync(new TPage() { BindingContext = context});

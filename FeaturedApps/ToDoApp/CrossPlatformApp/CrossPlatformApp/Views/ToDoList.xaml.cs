@@ -11,31 +11,36 @@
 		{
 			InitializeComponent();
 
-			Navigator = new NavigatorService(Navigation);
+			Navigator = new NavigationService(Navigation);
+
+            ItemsList.RefreshCommand = new Command(DoRefresh);
 		}
 
 		public INavigationService Navigator { get; set; }
 		public TodoListViewModel ViewModel { get { return BindingContext as TodoListViewModel; } }
 
-		public async void LoadItemsAsync()
+		public void LoadItemsAsync()
 		{
-			if (ViewModel == null)
-			{
-				return;
-			}
-			await ViewModel.LoadItemsAsync().ContinueWith(task => SetupCommands(task.Result));
+            DoRefresh();
 		}
 
-		public void LoadItems()
-		{
-			if (ViewModel == null)
-			{
-				return;
-			}
-			var items = ViewModel.LoadItems();
+        private async void DoRefresh()
+        {
+            if (ViewModel == null)
+            {
+                return;
+            }
+            await ViewModel.LoadItemsAsync().ContinueWith(task => HandleResult(task.Result));
 
-			SetupCommands(items);
-		}
+            ItemsList.EndRefresh();
+        }
+
+        private TodoItemViewModel[] HandleResult(TodoItemViewModel[] result)
+        {
+            SetupCommands(result);
+
+            return result;
+        }
 
 		private void SetupCommands(TodoItemViewModel[] elements)
 		{
@@ -64,7 +69,7 @@
 		{
 			try
 			{
-				await Navigator.NavigateToEditAsync(editItem);
+				await Navigator.NavigateToAsync(editItem);
 			}
 			catch (System.Exception ex)
 			{

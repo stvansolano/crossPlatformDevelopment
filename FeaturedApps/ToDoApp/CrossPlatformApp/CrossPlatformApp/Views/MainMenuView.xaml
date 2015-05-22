@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatformApp.MainMenuView">
+  <ListView>
+    <MenuItem Text="Item 1" />
+    <MenuItem Text="Item 2" />
+  </ListView>
+</ContentView>

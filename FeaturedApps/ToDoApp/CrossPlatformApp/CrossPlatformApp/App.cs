@@ -1,16 +1,21 @@
 ﻿namespace CrossPlatformApp
 {
-	using Shared.ViewModels;
-	using Xamarin.Forms;
+    using Shared.ViewModels;
+    using Shared.WebServices;
+    using Xamarin.Forms;
 
 	public class App : Application
 	{
 		private MainPage _mainPage;
-		public App()
+		
+        public App()
 		{
-            _mainPage = new MainPage();
 			// The root page of your application
-            MainPage = new NavigationPage(_mainPage);
+            _mainPage = new MainPage();
+
+            var navigationPage = new NavigationPage(_mainPage);
+
+            MainPage = navigationPage;
 		}
 
 		protected override void OnStart()
