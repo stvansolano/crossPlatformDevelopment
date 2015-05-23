@@ -10,6 +10,7 @@ Index:
 - Events, Commands & Navigation (coming soon)
 - Data Binding Basics (coming soon)
 - Async in C# with Xamarin (coming soon)
+- Xamarin Custom Controls
 - Triggers, DataTemplates and ResourceDictionaries (coming soon)
 - IoC and dependencies (coming soon)
 
