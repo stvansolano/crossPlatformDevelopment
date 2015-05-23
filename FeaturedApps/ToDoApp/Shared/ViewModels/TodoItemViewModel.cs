@@ -1,15 +1,32 @@
 ﻿namespace Shared.ViewModels
 {
-	using System.Windows.Input;
+    using Shared.Core;
+    using System.Windows.Input;
 
 	public class TodoItemViewModel : BaseViewModel
 	{
-		public const string ITEM_NAME_PROPERTY = "ItemName";
-		private string _name = string.Empty;
+        public TodoItemViewModel(ToDoItem model)
+        {
+            Model = model;
+
+            Description = "User:" + model.id + "completed:" + model.completed;
+        }
+
+        public TodoItemViewModel()
+        {
+            Model = new ToDoItem();
+        }
+
+        protected ToDoItem Model { get; set; }
+        
 		public string ItemName
 		{
-			get { return _name; }
-			set { SetProperty(ref _name, value, ITEM_NAME_PROPERTY); }
+			get { return Model.title; }
+            set
+            {
+                Model.title = value;
+                OnPropertyChanged("ItemName");
+            }
 		}
 
 		public const string DESCRIPTION_PROPERTY = "Description";
@@ -34,6 +51,29 @@
         {
             get { return _saveCommand; }
             set { SetProperty(ref _saveCommand, value, SAVE_COMMAND_PROPERTY); }
+        }
+
+        public const string TOGGLE_COMMAND_PROPERTY = "ToggleCommand";
+        private ICommand _toggleCommand;
+        public ICommand ToggleCommand
+        {
+            get { return _toggleCommand; }
+            set { SetProperty(ref _toggleCommand, value, TOGGLE_COMMAND_PROPERTY); }
+        }
+
+        public bool IsChecked
+        {
+            get { return Model.completed; }
+            set {
+                Model.completed = value;
+                OnPropertyChanged("IsChecked");
+            }
+        }
+
+        public void Toggle()
+        {
+            Model.Toggle();
+            OnPropertyChanged("IsChecked");
         }
     }
 }

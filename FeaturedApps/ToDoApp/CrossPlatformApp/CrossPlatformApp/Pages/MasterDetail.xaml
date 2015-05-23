@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+                  x:Class="CrossPlatformApp.Pages.MasterDetail">
+  <MasterDetailPage.Master>
+    <Label Text="Master" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <ContentPage Title="Details">
+    </ContentPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

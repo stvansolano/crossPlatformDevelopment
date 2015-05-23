@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CrossPlatformApp.ToDoList">
+             x:Class="CrossPlatformApp.ToDoList"
+             xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
 	<ContentView.Content>
 		<StackLayout>
 			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
@@ -9,7 +10,7 @@
                 RefreshCommand="{Binding Path=RefreshCommand}">
 					<ListView.ItemTemplate>
 						<DataTemplate>
-							<TextCell Text="{Binding Path=ItemName}" Detail="{Binding Path=DescriptionX}" Command="{Binding Path=NavigateCommand}" />
+              <local:ToDoItemCell Command="{Binding Path=NavigateCommand}" />
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>

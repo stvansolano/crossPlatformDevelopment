@@ -1,5 +1,6 @@
 ﻿namespace CrossPlatformApp
 {
+    using CrossPlatformApp.Pages;
     using Shared.ViewModels;
     using Shared.WebServices;
     using Xamarin.Forms;

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="CrossPlatformApp.ToDoItemCell"
+          xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+  <ViewCell.View>
+    <StackLayout Padding="20,0,0,0"
+                 Orientation = "Horizontal"
+                 HorizontalOptions="FillAndExpand">
+      <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
+      <local:TappedImage Source="uncheck.png" Command="{Binding Path=ToggleCommand}">
+        <Image.Triggers>
+          <DataTrigger TargetType="Image"
+                        Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
+            <Setter Property="Source" Value="check.png" />
+          </DataTrigger>
+        </Image.Triggers>
+      </local:TappedImage>
+      <Label Text="{Binding Path=ItemName}"
+             YAlign="Center" />
+      <!--Text="{Binding Path=ItemName}" Detail="{Binding Path=DescriptionX}" -->
+    </StackLayout>
+  </ViewCell.View>
+</ViewCell>

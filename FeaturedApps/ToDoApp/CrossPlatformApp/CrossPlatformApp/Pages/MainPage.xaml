@@ -1,13 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--<MasterDetailPage>
-  <MasterDetailPage.Master>
-    <local:MainMenuView />  
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <ContentPage Title="Details">
-    </ContentPage>
-  </MasterDetailPage.Detail>
-</MasterDetailPage>-->
 <ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"

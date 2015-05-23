@@ -26,9 +26,14 @@
 		private Task NavigateTo<TPage>(object context)
             where TPage : Page, new()
 		{
-            return Navigation.PushAsync(new TPage() { BindingContext = context});
+            var newPage = new TPage() { BindingContext = context};
+            var navigable = newPage as NavigationPage;
+            if (navigable == null)
+            {
+                navigable = new NavigationPage(newPage);
+            }
+            return Navigation.PushAsync(navigable);
 		}
-
 
         public Task ReturnToMain()
         {

@@ -61,7 +61,7 @@
 
         private TodoItemViewModel[] TransformItems(IEnumerable<ToDoItem> result)
         {
-            return result.Select(data => new TodoItemViewModel() { ItemName = data.title, Description = "User:" + data.id + "completed:" + data.completed }).ToArray();
+            return result.Select(data => new TodoItemViewModel(data)).ToArray();
         }
 
 		private TodoItemViewModel[] AddItems(TodoItemViewModel[] result)

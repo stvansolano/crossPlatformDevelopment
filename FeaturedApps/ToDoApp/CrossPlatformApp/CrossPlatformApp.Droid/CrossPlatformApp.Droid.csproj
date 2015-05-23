@@ -99,6 +99,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\slideout.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\refresh.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\slideout.png" />
+    <AndroidResource Include="Resources\drawable\plus.png" />
+    <AndroidResource Include="Resources\drawable\check.png" />
+    <AndroidResource Include="Resources\drawable\uncheck.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrossPlatformApp\CrossPlatformApp.csproj">

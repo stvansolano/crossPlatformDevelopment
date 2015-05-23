@@ -9,7 +9,13 @@
 	{
 		public ToDoList()
 		{
-			InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (System.Exception ex)
+            {
+            }
 
 			Navigator = new NavigationService(Navigation);
 
@@ -54,6 +60,12 @@
         {
             item.NavigateCommand = new Command(() => OnNavigate(item));
             item.SaveCommand = new Command(() => OnSave(item));
+            item.ToggleCommand = new Command(() => OnToggle(item));
+        }
+
+        private void OnToggle(TodoItemViewModel item)
+        {
+            item.Toggle();
         }
 
         private void OnSave(TodoItemViewModel editItem)
@@ -78,7 +90,7 @@
 
         internal TodoItemViewModel NewItem()
         {
-            var newItem = new TodoItemViewModel { ItemName = "New item:" };
+            var newItem = new TodoItemViewModel() { ItemName = "New item:" };
             SetupCommands(newItem);
 
             return newItem;
