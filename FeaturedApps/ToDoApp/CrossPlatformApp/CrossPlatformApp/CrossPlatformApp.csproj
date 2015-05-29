@@ -36,7 +36,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Toolkit\Extensions.cs" />
+    <Compile Include="Toolkit\GestureCollection.cs" />
+    <Compile Include="Toolkit\GestureInterest.cs" />
+    <Compile Include="Toolkit\GestureResult.cs" />
+    <Compile Include="Toolkit\Gestures.cs" />
+    <Compile Include="Toolkit\GesturesContentView.cs" />
     <Compile Include="CustomControls\TappedImage.cs" />
+    <Compile Include="Toolkit\IGestureCommand.cs" />
     <Compile Include="Pages\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>

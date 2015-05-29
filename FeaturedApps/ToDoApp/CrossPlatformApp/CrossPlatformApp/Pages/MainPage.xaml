@@ -5,7 +5,6 @@
               x:Class="CrossPlatformApp.MainPage"
               Title="{Binding Path=Title}">
   <StackLayout>
-    <Label x:Name="LabelDetails" Text="Details" />
     <local:ToDoList x:Name="MainList" />
   </StackLayout>
   <Page.ToolbarItems>

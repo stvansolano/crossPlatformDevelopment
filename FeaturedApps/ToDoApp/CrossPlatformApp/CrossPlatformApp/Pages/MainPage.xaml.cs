@@ -4,6 +4,8 @@
     using Shared.ViewModels;
     using Shared.WebServices;
     using Xamarin.Forms;
+    using Pages;
+    using System.Linq;
 
 	public partial class MainPage
 		//MasterDetailPage
@@ -18,20 +20,32 @@
 
             InitializeComponent();
 
-            //IsPresented = false;
-            var context = new TodoListViewModel(new DataService());
+            ViewModel = new TodoListViewModel(new DataService());
 
-            context.NewItemCommand = new Command(() =>
+            ViewModel.NewItemCommand = new Command(() =>
             {
                 MainList.Navigator.NavigateToAsync(MainList.NewItem());
             });
 
-            BindingContext = context;
+            BindingContext = ViewModel;
+
+            MainList.MessageService = new MessageService(this);
 		}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (ViewModel.Elements.Any() == false)
+            {
+                MainList.LoadItemsAsync();
+            }
+        }
 
 		internal void Start()
 		{
-			MainList.LoadItemsAsync();
 		}
+
+        public TodoListViewModel ViewModel { get; set; }
     }
 }

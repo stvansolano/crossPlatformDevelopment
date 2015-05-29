@@ -4,21 +4,29 @@
           x:Class="CrossPlatformApp.ToDoItemCell"
           xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
   <ViewCell.View>
-    <StackLayout Padding="20,0,0,0"
-                 Orientation = "Horizontal"
-                 HorizontalOptions="FillAndExpand">
-      <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
-      <local:TappedImage Source="uncheck.png" Command="{Binding Path=ToggleCommand}">
-        <Image.Triggers>
-          <DataTrigger TargetType="Image"
-                        Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
-            <Setter Property="Source" Value="check.png" />
-          </DataTrigger>
-        </Image.Triggers>
-      </local:TappedImage>
-      <Label Text="{Binding Path=ItemName}"
-             YAlign="Center" />
-      <!--Text="{Binding Path=ItemName}" Detail="{Binding Path=DescriptionX}" -->
-    </StackLayout>
+    <Grid HorizontalOptions="FillAndExpand"
+          VerticalOptions="CenterAndExpand"
+          >
+      <StackLayout Orientation = "Horizontal">
+        <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
+        <local:TappedImage Source="uncheck.png" Command="{Binding Path=ToggleCommand}">
+          <Image.Triggers>
+            <DataTrigger TargetType="Image"
+                         Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
+              <Setter Property="Source" Value="check.png" />
+            </DataTrigger>
+          </Image.Triggers>
+        </local:TappedImage>
+        <Label Text="{Binding Path=ItemName}" YAlign="Center" />
+      </StackLayout>
+      <StackLayout Orientation="Vertical"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center">
+        <local:TappedImage Source="ic_chevron.png" 
+                         Command="{Binding Path=ShowOptionsCommand}"/>
+      <local:TappedImage Source="ic_delete.png" 
+                         Command="{Binding Path=DeleteCommand}"/>
+      </StackLayout>
+    </Grid>
   </ViewCell.View>
 </ViewCell>

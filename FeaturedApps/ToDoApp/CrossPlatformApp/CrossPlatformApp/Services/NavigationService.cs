@@ -14,14 +14,19 @@
 
 		protected INavigation Navigation { get; set; }
 
-		Task INavigationService.NavigateToAsync(object context)
-		{
-			if (context is TodoItemViewModel)
-			{
-				return NavigateTo<EditPage>(context);
-			}
-			return null;
-		}
+        async void INavigationService.NavigateToAsync(object context)
+        {
+            try
+            {
+                if (context is TodoItemViewModel)
+                {
+                    await NavigateTo<EditPage>(context);
+                }
+            }
+            catch (System.Exception)
+            {
+            }
+        }
 
 		private Task NavigateTo<TPage>(object context)
             where TPage : Page, new()

@@ -4,7 +4,7 @@
 
 	public interface INavigationService
 	{
-		Task NavigateToAsync(object context);
+		void NavigateToAsync(object context);
 
         Task ReturnToMain();
     }

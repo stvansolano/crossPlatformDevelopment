@@ -1,6 +1,7 @@
 ﻿namespace Shared.ViewModels
 {
     using Shared.Core;
+    using Shared.Infrastructure.Services;
     using System.Windows.Input;
 
 	public class TodoItemViewModel : BaseViewModel
@@ -61,10 +62,26 @@
             set { SetProperty(ref _toggleCommand, value, TOGGLE_COMMAND_PROPERTY); }
         }
 
+        private ICommand _showOptionsCommand;
+        public ICommand ShowOptionsCommand
+        {
+            get { return _showOptionsCommand; }
+            set
+            {
+                _showOptionsCommand = value;
+                OnPropertyChanged("ShowOptionsCommand");
+            }
+        }
+
+        public ICommand DeleteCommand { get; set; }
+        public ICommand EditCommand { get; set; }
+        public ICommand DuplicateCommand { get; set; }
+
         public bool IsChecked
         {
             get { return Model.completed; }
-            set {
+            set
+            {
                 Model.completed = value;
                 OnPropertyChanged("IsChecked");
             }
@@ -74,6 +91,19 @@
         {
             Model.Toggle();
             OnPropertyChanged("IsChecked");
+        }
+
+        protected Menu LastMenu { get; set; }
+        public Menu AsMenuOptions()
+        {
+            return LastMenu = new Menu
+            {
+                Title = "Options",
+                Options = new MenuOption[] { 
+                    new MenuOption { Text = "Edit", Command = EditCommand },
+                    new MenuOption { Text = "Copy & edit", Command = DuplicateCommand}
+                }
+            };
         }
     }
 }

@@ -12,18 +12,18 @@
     [Activity(
         Label = "My To-Do list showcase",
         Icon = "@drawable/icon",
-        MainLauncher = true, 
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-        Theme = "@android:style/Theme.Holo.Light"
+        MainLauncher = true,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation/*,
+        Theme = "@style/MyTheme"*/
         //@android:style/Theme.Holo.Light
         //@style/MyTheme
     )]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
-	{
-		protected override void OnCreate(Bundle bundle)
-		{
-			base.OnCreate(bundle);
-            
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
@@ -31,6 +31,6 @@
             {
                 ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
             }*/
-		}
-	}
+        }
+    }
 }
