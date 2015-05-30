@@ -6,46 +6,103 @@
     using Xamarin.Forms;
     using Pages;
     using System.Linq;
+    using System.Collections.ObjectModel;
+    using System.Windows.Input;
 
-	public partial class MainPage
+    public partial class MainPage
 		//MasterDetailPage
 		//NavigationPage
 		//TabbedPage
 		//CarouselPage
 	{
         public MainPage()
-		{
-            Title = "Master";
-            //SetBinding (Page.TitleProperty, new Binding(BaseViewModel.TitlePropertyName));
+        {
+            try
+            {
+                ViewModel = new ApplicationViewModel();
+                InitializeComponent();
+                SetupControls();
+            }
+            catch (System.Exception ex)
+            {
+            }            
+        }
 
-            InitializeComponent();
+        private void SetupControls() 
+        {
+            CurrentToDoView = Resources["MainList"] as ToDoList;
+            CurrentToDoView.MessageService = new MessageService(this);
+            CurrentToDoView.BindingContext = ViewModel.CurrentList;
 
-            ViewModel = new TodoListViewModel(new DataService());
+            AllLists = Resources["AllLists"] as ListManager;
+
+            ViewModel.Sections.Add(CurrentToDoView);
+            ViewModel.Sections.Add(AllLists);
+            //ViewModel.Sections.Add(new Label { Text = "Coming soon" });
 
             ViewModel.NewItemCommand = new Command(() =>
             {
-                MainList.Navigator.NavigateToAsync(MainList.NewItem());
+                var newItem = CurrentToDoView.CreateNew();
+                CurrentToDoView.Add(newItem);
+                CurrentToDoView.ScrollTo(newItem);
+            });
+
+            ViewModel.ClearListCommand = new Command(() =>
+            {
+                ViewModel.CurrentList.Elements.Clear();
             });
 
             BindingContext = ViewModel;
-
-            MainList.MessageService = new MessageService(this);
-		}
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            if (ViewModel.Elements.Any() == false)
-            {
-                MainList.LoadItemsAsync();
-            }
         }
 
 		internal void Start()
 		{
+            if (ViewModel.CurrentList.HasItems == false)
+            {
+                CurrentToDoView.LoadItemsAsync();
+            }
 		}
 
-        public TodoListViewModel ViewModel { get; set; }
+        public ApplicationViewModel ViewModel { get; set; }
+        public ToDoList CurrentToDoView { get; set; }
+        public ListManager AllLists { get; set; }
+    }
+
+    public class ApplicationViewModel : BaseViewModel
+    {
+        public ApplicationViewModel ()
+	    {
+            Title = "My To-Do list showcase";
+
+            CurrentList = new TodoListViewModel(new DataService());
+            Sections = new ObservableCollection<object>();
+        }
+
+        public TodoListViewModel CurrentList { get; set; }
+        public ObservableCollection<object> Sections { get; set; }
+
+        public const string TITLE_PROPERTY = "Title";
+        private string _title = string.Empty;
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value, TITLE_PROPERTY); }
+        }
+
+        public const string NEW_ITEM_COMMAND_PROPERTY = "NewItemCommand";
+        private ICommand _newItemCommand;
+        public ICommand NewItemCommand
+        {
+            get { return _newItemCommand; }
+            set { SetProperty(ref _newItemCommand, value, NEW_ITEM_COMMAND_PROPERTY); }
+        }
+
+        public const string CLEAR_LIST_COMMAND_PROPERTY = "ClearListCommand";
+        private ICommand _clearListCommand;
+        public ICommand ClearListCommand
+        {
+            get { return _clearListCommand; }
+            set { SetProperty(ref _clearListCommand, value, CLEAR_LIST_COMMAND_PROPERTY); }
+        }
     }
 }

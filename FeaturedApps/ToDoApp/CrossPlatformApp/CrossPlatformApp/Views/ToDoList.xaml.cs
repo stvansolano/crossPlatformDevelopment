@@ -18,13 +18,14 @@
             }
 
 			Navigator = new NavigationService(Navigation);
-
             ItemsList.RefreshCommand = new Command(DoRefresh);
+            Title = "My TODO list";
 		}
 
 		public INavigationService Navigator { get; set; }
         public IMessageService MessageService { get; set; }
 		public TodoListViewModel ViewModel { get { return BindingContext as TodoListViewModel; } }
+        public string Title { get; set; }
 
 		public void LoadItemsAsync()
 		{
@@ -64,11 +65,17 @@
         {
             item.NavigateCommand = new Command(() => OnNavigate(item));
             item.SaveCommand = new Command(() => OnSave(item));
+            item.CancelEditCommand = new Command(() => OnCancelEdit(item));
             item.ToggleCommand = new Command(() => OnToggle(item));
             item.ShowOptionsCommand = new Command(() => OnShowOptionsCommand(item));
             item.DeleteCommand = new Command(() => OnDeletePrompt(item));
             item.DuplicateCommand = new Command(() => OnDuplicate(item));
             item.EditCommand = new Command(() => OnNavigate(item));
+        }
+
+        private void OnCancelEdit(TodoItemViewModel item)
+        {
+            Navigator.ReturnToMain();
         }
 
         private async void OnShowOptionsCommand(TodoItemViewModel item)
@@ -111,7 +118,7 @@
 
         private void OnDuplicate(TodoItemViewModel editItem)
         {
-            var duplicate = NewItem();
+            var duplicate = CreateNew();
             duplicate.ItemName = editItem.ItemName + " copy";
             duplicate.IsChecked = editItem.IsChecked;
             duplicate.Description = editItem.Description;
@@ -124,12 +131,23 @@
             Navigator.NavigateToAsync(editItem);
         }
 
-        internal TodoItemViewModel NewItem()
+        public TodoItemViewModel CreateNew()
         {
             var newItem = new TodoItemViewModel() { ItemName = "New item:" };
             SetupCommands(newItem);
 
             return newItem;
+        }
+
+        internal void ScrollTo(TodoItemViewModel newItem)
+        {
+            ItemsList.ScrollTo(newItem, ScrollToPosition.Start, true);
+            ItemsList.SelectedItem = newItem;
+        }
+
+        internal void Add(TodoItemViewModel newItem)
+        {
+            ViewModel.Elements.Add(newItem);
         }
     }
 }

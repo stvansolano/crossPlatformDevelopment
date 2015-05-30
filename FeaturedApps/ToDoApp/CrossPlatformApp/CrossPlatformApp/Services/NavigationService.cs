@@ -4,6 +4,7 @@
 	using Shared.Infrastructure.Services;
 	using Xamarin.Forms;
 	using Shared.ViewModels;
+    using System.Linq;
 
 	public class NavigationService : INavigationService
 	{
@@ -37,11 +38,23 @@
             {
                 navigable = new NavigationPage(newPage);
             }
-            return Navigation.PushAsync(navigable);
+
+            try
+            {
+                return Navigation.PushModalAsync(navigable);
+            }
+            catch (System.Exception ex) 
+            {
+                return Task.Factory.StartNew(() => { });
+            }
 		}
 
         public Task ReturnToMain()
         {
+            if (Navigation.ModalStack.Any())
+            {
+                return Navigation.PopModalAsync().ContinueWith(task => Navigation.PopToRootAsync());
+            }
             return Navigation.PopToRootAsync();
         }
     }

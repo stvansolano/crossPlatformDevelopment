@@ -54,6 +54,14 @@
             set { SetProperty(ref _saveCommand, value, SAVE_COMMAND_PROPERTY); }
         }
 
+        public const string CANCEL_EDIT_COMMAND = "CancelEditCommand";
+        private ICommand _cancelEditCommand;
+        public ICommand CancelEditCommand
+        {
+            get { return _cancelEditCommand; }
+            set { SetProperty(ref _cancelEditCommand, value, CANCEL_EDIT_COMMAND); }
+        }
+
         public const string TOGGLE_COMMAND_PROPERTY = "ToggleCommand";
         private ICommand _toggleCommand;
         public ICommand ToggleCommand

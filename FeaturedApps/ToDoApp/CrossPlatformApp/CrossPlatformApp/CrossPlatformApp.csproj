@@ -36,15 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="CustomControls\EditableLabel.xaml.cs">
+      <DependentUpon>EditableLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\TabView.cs" />
     <Compile Include="Services\MessageService.cs" />
-    <Compile Include="Toolkit\Extensions.cs" />
-    <Compile Include="Toolkit\GestureCollection.cs" />
-    <Compile Include="Toolkit\GestureInterest.cs" />
-    <Compile Include="Toolkit\GestureResult.cs" />
-    <Compile Include="Toolkit\Gestures.cs" />
-    <Compile Include="Toolkit\GesturesContentView.cs" />
     <Compile Include="CustomControls\TappedImage.cs" />
-    <Compile Include="Toolkit\IGestureCommand.cs" />
     <Compile Include="Pages\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
@@ -54,12 +51,12 @@
     <Compile Include="Pages\MasterDetail.xaml.cs">
       <DependentUpon>MasterDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TabsPage.xaml.cs">
-      <DependentUpon>TabsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Views\CustomViewCell.cs" />
+    <Compile Include="Views\ListManager.xaml.cs">
+      <DependentUpon>ListManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
     </Compile>
@@ -153,12 +150,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\TabsPage.xaml">
+    <EmbeddedResource Include="Views\ToDoItemCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\ToDoItemCell.xaml">
+    <EmbeddedResource Include="CustomControls\EditableLabel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ListManager.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

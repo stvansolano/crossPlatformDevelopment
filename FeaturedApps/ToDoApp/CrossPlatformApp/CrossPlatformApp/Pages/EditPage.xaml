@@ -14,7 +14,7 @@
         </StackLayout>
       </StackLayout>
   <Page.ToolbarItems>
-    <ToolbarItem Text="Cancel" Command="{Binding Path=CancelCommand}" />
+    <ToolbarItem Text="Cancel" Command="{Binding Path=CancelEditCommand}" />
     <ToolbarItem Text="Save" Command="{Binding Path=SaveCommand}" />
   </Page.ToolbarItems>
 </ContentPage>

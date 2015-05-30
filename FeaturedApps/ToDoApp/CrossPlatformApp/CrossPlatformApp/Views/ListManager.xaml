@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatformApp.ListManager">
+  <ContentView.Content>
+    <StackLayout Orientation="Vertical">
+      <Label Text="List 1" />
+      <Label Text="List 2" />
+      <Label Text="List 3" />
+      <Label Text="List 4" />
+      <Label Text="List 5" />
+      <Label Text="List 6" />
+      <Label Text="List 7" />
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

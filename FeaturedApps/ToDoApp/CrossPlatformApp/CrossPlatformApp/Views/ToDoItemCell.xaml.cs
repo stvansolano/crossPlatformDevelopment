@@ -1,12 +1,11 @@
 ﻿namespace CrossPlatformApp
 {
-    using Toolkit;
     using System;
     using System.ComponentModel;
     using System.Windows.Input;
     using Xamarin.Forms;
 
-    public partial class ToDoItemCell : INotifyPropertyChanged
+    public partial class ToDoItemCell
     {
         public ToDoItemCell()
         {

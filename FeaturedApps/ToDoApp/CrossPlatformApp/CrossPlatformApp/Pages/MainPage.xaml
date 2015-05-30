@@ -1,13 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
-              x:Class="CrossPlatformApp.MainPage"
-              Title="{Binding Path=Title}">
-  <StackLayout>
-    <local:ToDoList x:Name="MainList" />
-  </StackLayout>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+             x:Class="CrossPlatformApp.MainPage"
+             Title="{Binding Path=Title}"
+             ItemsSource="{Binding Path=Sections}">
+  <VisualElement.Resources>
+    <ResourceDictionary>
+      <local:ToDoList x:Key="MainList" />
+      <local:ListManager x:Key="AllLists" />
+    </ResourceDictionary>
+  </VisualElement.Resources>
   <Page.ToolbarItems>
     <ToolbarItem Text="New" Command="{Binding Path=NewItemCommand}" />
+    <ToolbarItem Text="Clear" Command="{Binding Path=ClearListCommand}" />
   </Page.ToolbarItems>
-</ContentPage>
+  <TabbedPage.ItemTemplate>
+    <DataTemplate>
+      <ContentPage Title="{Binding Path=Title}">
+        <ContentPage.Content>
+          <local:TabView BindableContent="{Binding}" />
+        </ContentPage.Content>
+      </ContentPage>
+    </DataTemplate>
+  </TabbedPage.ItemTemplate>
+</TabbedPage>

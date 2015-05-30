@@ -1,54 +1,65 @@
 ﻿namespace Shared.WebServices
 {
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using Shared.Core;
     using Shared.Infrastructure.Services;
+    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Net.Http;
+    using System.Net.Http.Headers;
     using System.Threading;
     using System.Threading.Tasks;
 
-	public class DataService : IDataService
-	{
+    public class DataService : IDataService
+    {
         private CancellationTokenSource _cts = new CancellationTokenSource();
 
         public Task<IEnumerable<ToDoItem>> GetToDosAsync()
         {
-            using (var client = new HttpClient())
+            using (var client = CreateClient())
             {
-                return Task.Run(() => Deserialize(GetJson(client).Result));
+                return Deserialize(GetJson(client));
             }
         }
 
-        private Task<string> GetJson(HttpClient client)
+        private Task<HttpResponseMessage> GetJson(HttpClient httpClient)
         {
-            return client.GetStringAsync("http://jsonplaceholder.typicode.com/todos").ContinueWith(task => HandleResult(task));
+            return httpClient.GetAsync("todos");
         }
 
-        private string HandleResult(Task<string> task)
+        private Task<IEnumerable<ToDoItem>> Deserialize(Task<HttpResponseMessage> task)
         {
-            //task => task.Result.Content.ReadAsStringAsync()
-            if (task.Exception == null)
+            if (task.Exception != null)
             {
-                //var result = task.Result.Content.ReadAsStringAsync();
-                return task.Result;
+                return AsFailedResult();
             }
-            return "[{'userId': 1, 'id': 1,'title': 'Failed to get items','completed': false}]";
+            var response = task.Result;
+            if (task.Result.IsSuccessStatusCode == false)
+            {
+                return AsFailedResult();
+            }
+            return response.Content.ReadAsStringAsync().ContinueWith<IEnumerable<ToDoItem>>(nextTask => JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(nextTask.Result));
         }
-       
-        private IEnumerable<ToDoItem> Deserialize(string result)
-        {
-            try
-            {
-                return JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(result);
-            }
-            catch (System.Exception ex)
-            {
-            }
 
-            return new ToDoItem[0];
+        private Task<IEnumerable<ToDoItem>> AsFailedResult()
+        {
+            IEnumerable<ToDoItem> result = new[] { new ToDoItem { title = "Failed to get items" } };
+
+            return Task.Factory.StartNew(() => result);
+        }
+
+        private HttpClient CreateClient()
+        {
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("http://jsonplaceholder.typicode.com/")
+            };
+
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            return httpClient;
         }
     }
 }

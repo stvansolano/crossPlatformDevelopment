@@ -1,12 +1,11 @@
 ﻿namespace Shared.ViewModels
 {
-    using Shared.Infrastructure.Services;
+    using Infrastructure.Services;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
-    using System.Windows.Input;
     using System.Linq;
-    using Shared.Core;
+    using Core;
 
 	public class TodoListViewModel : BaseViewModel
 	{
@@ -14,28 +13,10 @@
 		{
 			_elements = new ObservableCollection<TodoItemViewModel>();
             DataServices = dataServices;
-
-            Title = "My To-Do list showcase";
 		}
 
         public IDataService DataServices { get; set; }
 
-		public const string TITLE_PROPERTY = "Title";
-		private string _title = string.Empty;
-		public string Title
-		{
-			get { return _title; }
-			set { SetProperty(ref _title, value, TITLE_PROPERTY); }
-		}
-
-        public const string NEW_ITEM_COMMAND_PROPERTY = "NewItemCommand";
-        private ICommand _newItemCommand;
-        public ICommand NewItemCommand
-		{
-            get { return _newItemCommand; }
-            set { SetProperty(ref _newItemCommand, value, NEW_ITEM_COMMAND_PROPERTY); }
-		}
-        
 		private ObservableCollection<TodoItemViewModel> _elements;
 		public ObservableCollection<TodoItemViewModel> Elements
 		{
@@ -73,5 +54,18 @@
 
 			return result;
 		}
+
+        public bool HasItems
+        {
+            get
+            {
+                return Elements != null && Elements.Any();
+            }
+        }
+
+        public object CreateNew()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

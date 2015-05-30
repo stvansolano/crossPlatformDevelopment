@@ -4,28 +4,39 @@
           x:Class="CrossPlatformApp.ToDoItemCell"
           xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
   <ViewCell.View>
-    <Grid HorizontalOptions="FillAndExpand"
-          VerticalOptions="CenterAndExpand"
-          >
-      <StackLayout Orientation = "Horizontal">
+    <Grid HorizontalOptions="Start"
+          VerticalOptions="FillAndExpand">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <StackLayout Orientation="Horizontal"
+                   Grid.Column="0">
         <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
         <local:TappedImage Source="uncheck.png" Command="{Binding Path=ToggleCommand}">
-          <Image.Triggers>
+					<VisualElement.Style>
+						<Style TargetType="Image">
+              <Setter Property="BackgroundColor" Value="White" />
+						</Style>
+					</VisualElement.Style>
+          <VisualElement.Triggers>
             <DataTrigger TargetType="Image"
-                         Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
+                          Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
               <Setter Property="Source" Value="check.png" />
             </DataTrigger>
-          </Image.Triggers>
+          </VisualElement.Triggers>
         </local:TappedImage>
-        <Label Text="{Binding Path=ItemName}" YAlign="Center" />
+        <!--<local:EditableLabel Text="{Binding Path=ItemName}" />-->
+        <Label x:Name="ItemLabel" TextColor="Black" Text="{Binding Path=ItemName}" YAlign="Center" />
       </StackLayout>
-      <StackLayout Orientation="Vertical"
-                   HorizontalOptions="End"
+      <StackLayout Grid.Column="1" Orientation="Horizontal"
+                   HorizontalOptions="EndAndExpand"
                    VerticalOptions="Center">
-        <local:TappedImage Source="ic_chevron.png" 
+        <local:TappedImage Source="ic_delete.png" 
+                         Command="{Binding Path=DeleteCommand}" />
+        
+        <local:TappedImage Source="ic_chevron.png"
                          Command="{Binding Path=ShowOptionsCommand}"/>
-      <local:TappedImage Source="ic_delete.png" 
-                         Command="{Binding Path=DeleteCommand}"/>
       </StackLayout>
     </Grid>
   </ViewCell.View>
