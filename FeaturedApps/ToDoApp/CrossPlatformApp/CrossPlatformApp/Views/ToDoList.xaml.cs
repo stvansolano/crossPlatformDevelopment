@@ -3,6 +3,7 @@
     using Services;
     using Shared.Infrastructure.Services;
     using Shared.ViewModels;
+    using System.Threading.Tasks;
     using Xamarin.Forms;
 
 	public partial class ToDoList
@@ -38,17 +39,22 @@
             {
                 return;
             }
-            await ViewModel.LoadItemsAsync().ContinueWith(task => HandleResult(task.Result));
+            await ViewModel.LoadItemsAsync().ContinueWith<TodoItemViewModel[]>(HandleResult);
+        }
+
+        private TodoItemViewModel[] HandleResult(Task<TodoItemViewModel[]> task)
+        {
+            if (task.Exception != null)
+            {
+                return new TodoItemViewModel[0];
+            }
+            var result = task.Result;
+            SetupCommands(result);
 
             if (ItemsList.IsRefreshing)
             {
                 ItemsList.EndRefresh();
             }
-        }
-
-        private TodoItemViewModel[] HandleResult(TodoItemViewModel[] result)
-        {
-            SetupCommands(result);
 
             return result;
         }

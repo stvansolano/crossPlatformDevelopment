@@ -13,8 +13,8 @@
         Label = "My To-Do list showcase",
         Icon = "@drawable/icon",
         MainLauncher = true,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation/*,
-        Theme = "@style/MyTheme"*/
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+        Theme = "@style/MyTheme"
         //@android:style/Theme.Holo.Light
         //@style/MyTheme
     )]
