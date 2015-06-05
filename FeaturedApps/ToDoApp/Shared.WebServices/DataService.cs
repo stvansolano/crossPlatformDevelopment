@@ -39,7 +39,16 @@
             {
                 return AsFailedResult();
             }
-            return response.Content.ReadAsStringAsync().ContinueWith<IEnumerable<ToDoItem>>(nextTask => JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(nextTask.Result));
+            return response.Content.ReadAsStringAsync().ContinueWith<IEnumerable<ToDoItem>>(HandleReadJson);
+        }
+
+        private IEnumerable<ToDoItem> HandleReadJson(Task<string> task)
+        {
+            if (task.Exception != null)
+            {
+                return AsFailedResult().Result;
+            }
+            return JsonConvert.DeserializeObject<IEnumerable<ToDoItem>>(task.Result);
         }
 
         private Task<IEnumerable<ToDoItem>> AsFailedResult()

@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <style name="MyTheme" parent="android:Theme.Material.Light">
-    <item name="android:icon">@android:color/transparent</item>
+ <!--
+        Base application theme for API 21+. This theme completely replaces
+        MyTheme from BOTH res/values/styles.xml on API 21+ devices.
+    -->
+  <style name="Theme.MyTheme.Base" parent="@style/android:Theme.Material">
+    <!--Theme.AppCompat.Light-->
+    <!--@style/android:Theme.Material-->
+    <!--@style/android:Theme.Material.Light-->
+    <!--@style/android:Theme.Material.Light.DarkActionBar-->
+    
+    <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="android:colorPrimary">@color/colorPrimary</item>
+
+    <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    <item name="android:colorAccent">@color/colorAccent</item>
+    <!--<item name="android:accent">@color/accent</item>-->
+
+    <item name="android:windowBackground">@color/windowBackground</item>
+    <item name="android:navigationBarColor">@color/navigationBarColor</item>
+    <item name="android:statusBarColor">@color/statusBarColor</item>
+
+    <!--<item name="popupMenuStyle">@style/PopupMenu.Mytheme</item>
+    <item name="dropDownListViewStyle">@style/DropDownListView.Mytheme</item>
+    <item name="actionBarTabStyle">@style/ActionBarTabStyle.Mytheme</item>
+    <item name="actionDropDownStyle">@style/DropDownNav.Mytheme</item>
+    <item name="actionBarStyle">@style/ActionBar.Solid.Mytheme</item>
+    <item name="actionModeBackground">@drawable/cab_background_top_mytheme</item>
+    <item name="actionModeSplitBackground">@drawable/cab_background_bottom_mytheme</item>
+    <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Mytheme</item>
+    <item name="actionBarItemBackground">@drawable/selectable_background_mytheme</item>-->
+
+    <!--<item name="android:windowNoTitle">true</item>-->
+  </style>
+
+  <style name="Theme.MyTheme" parent="Theme.MyTheme.Base">
+    
   </style>
 </resources>

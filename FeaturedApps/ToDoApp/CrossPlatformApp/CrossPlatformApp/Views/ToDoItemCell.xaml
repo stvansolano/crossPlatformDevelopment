@@ -27,12 +27,12 @@
           </VisualElement.Triggers>
         </local:TappedImage>
         <!--<local:EditableLabel Text="{Binding Path=ItemName}" />-->
-        <Label x:Name="ItemLabel" TextColor="Black" Text="{Binding Path=ItemName}" YAlign="Center" />
+        <Label x:Name="ItemLabel" Text="{Binding Path=ItemName}" YAlign="Center" />
       </StackLayout>
       <StackLayout Grid.Column="1" Orientation="Horizontal"
                    HorizontalOptions="EndAndExpand"
                    VerticalOptions="Center">
-        <local:TappedImage Source="ic_delete.png" 
+        <local:TappedImage Source="ic_delete.png"
                          Command="{Binding Path=DeleteCommand}" />
         
         <local:TappedImage Source="ic_chevron.png"
