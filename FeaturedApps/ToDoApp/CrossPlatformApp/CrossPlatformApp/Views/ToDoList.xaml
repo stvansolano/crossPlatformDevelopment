@@ -3,11 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPlatformApp.ToDoList"
              xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+  <VisualElement.Resources>
+    <ResourceDictionary>
+      <local:ImagesCache x:Key="SharedImageFactory" />
+    </ResourceDictionary>
+  </VisualElement.Resources>
 	<ContentView.Content>
 		<StackLayout>
 			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
                 IsGroupingEnabled="{Binding Path=IsGrouped}"
-                RefreshCommand="{Binding Path=RefreshCommand}">
+                RefreshCommand="{Binding Path=RefreshCommand}"
+                HasUnevenRows="True"
+                SeparatorColor="#ddd">
         <ListView.ItemTemplate>
 						<DataTemplate>
               <local:ToDoItemCell Command="{Binding Path=NavigateCommand}" />

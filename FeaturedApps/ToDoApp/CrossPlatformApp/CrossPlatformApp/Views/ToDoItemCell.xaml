@@ -5,20 +5,30 @@
           xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
   <ViewCell.View>
     <Grid HorizontalOptions="Start"
-          VerticalOptions="FillAndExpand">
+          VerticalOptions="FillAndExpand"
+          Padding="5,0,5,0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
+      <Label Text="..." Grid.Column="0" XAlign="End" YAlign="Center" />
       <StackLayout Orientation="Horizontal"
-                   Grid.Column="0">
+                   Grid.Column="0"
+                   HeightRequest="50"
+                   Spacing="10"
+                   Padding="5,0,5,0">
         <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
-        <local:TappedImage Source="uncheck.png" Command="{Binding Path=ToggleCommand}">
-					<VisualElement.Style>
-						<Style TargetType="Image">
-              <Setter Property="BackgroundColor" Value="White" />
-						</Style>
-					</VisualElement.Style>
+        
+        <Label x:Name="ItemLabel" Text="{Binding Path=ItemName}" YAlign="Center" />
+      </StackLayout>
+      <StackLayout Grid.Column="1" Orientation="Horizontal"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="Center"
+                   Padding="0,0,2,0">
+        <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
+                           local:ImageFactory.CachedSource="uncheck.png"
+                           Command="{Binding Path=ToggleCommand}"
+                           HeightRequest="20">
           <VisualElement.Triggers>
             <DataTrigger TargetType="Image"
                           Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
@@ -26,17 +36,14 @@
             </DataTrigger>
           </VisualElement.Triggers>
         </local:TappedImage>
-        <!--<local:EditableLabel Text="{Binding Path=ItemName}" />-->
-        <Label x:Name="ItemLabel" Text="{Binding Path=ItemName}" YAlign="Center" />
-      </StackLayout>
-      <StackLayout Grid.Column="1" Orientation="Horizontal"
-                   HorizontalOptions="EndAndExpand"
-                   VerticalOptions="Center">
-        <local:TappedImage Source="ic_delete.png"
-                         Command="{Binding Path=DeleteCommand}" />
+
+        <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
+                           local:ImageFactory.CachedSource="ic_delete.png"
+                           Command="{Binding Path=DeleteCommand}" />
         
-        <local:TappedImage Source="ic_chevron.png"
-                         Command="{Binding Path=ShowOptionsCommand}"/>
+        <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
+                           local:ImageFactory.CachedSource="ic_chevron.png"
+                           Command="{Binding Path=NavigateCommand}" />
       </StackLayout>
     </Grid>
   </ViewCell.View>

@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel;
+    using System.IO;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -18,8 +19,10 @@
             }
         }
 
-        private void OnTapped(object sender, EventArgs e)
+        protected override void OnTapped()
         {
+            base.OnTapped();
+         
             if (Command == null)
             {
                 return;

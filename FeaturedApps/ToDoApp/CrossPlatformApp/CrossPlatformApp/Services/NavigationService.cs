@@ -8,9 +8,9 @@
 
 	public class NavigationService : INavigationService
 	{
-		public NavigationService(INavigation navigation)
+		public NavigationService(INavigation formsNavigation)
 		{
-			Navigation = navigation;
+            Navigation = formsNavigation;
 		}
 
 		protected INavigation Navigation { get; set; }
@@ -24,7 +24,7 @@
                     await NavigateTo<EditPage>(context);
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
             }
         }

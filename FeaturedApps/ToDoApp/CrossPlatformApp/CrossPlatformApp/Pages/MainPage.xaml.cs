@@ -8,6 +8,7 @@
     using System.Linq;
     using System.Collections.ObjectModel;
     using System.Windows.Input;
+    using CrossPlatformApp.Services;
 
     public partial class MainPage
 		//MasterDetailPage
@@ -19,7 +20,7 @@
         {
             try
             {
-                ViewModel = new ApplicationViewModel();
+                ViewModel = new ApplicationViewModel(new DataService(), new NavigationService(Navigation));
                 InitializeComponent();
                 SetupControls();
             }
@@ -43,8 +44,8 @@
             ViewModel.NewItemCommand = new Command(() =>
             {
                 var newItem = CurrentToDoView.CreateNew();
-                CurrentToDoView.Add(newItem);
-                CurrentToDoView.ScrollTo(newItem);
+
+                //CurrentToDoView.ScrollTo(newItem);
             });
 
             ViewModel.ClearListCommand = new Command(() =>
@@ -70,11 +71,10 @@
 
     public class ApplicationViewModel : BaseViewModel
     {
-        public ApplicationViewModel ()
+        public ApplicationViewModel (IDataService dataService, INavigationService navigation)
 	    {
-            Title = "My To-Do list showcase";
-
-            CurrentList = new TodoListViewModel(new DataService());
+            Title = string.Empty;
+            CurrentList = new TodoListViewModel(dataService, navigation);
             Sections = new ObservableCollection<object>();
         }
 

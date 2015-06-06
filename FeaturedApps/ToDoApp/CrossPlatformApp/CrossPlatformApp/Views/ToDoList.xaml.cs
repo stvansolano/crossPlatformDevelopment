@@ -1,12 +1,11 @@
 ﻿namespace CrossPlatformApp
 {
-    using Services;
     using Shared.Infrastructure.Services;
     using Shared.ViewModels;
     using System.Threading.Tasks;
     using Xamarin.Forms;
 
-	public partial class ToDoList
+    public partial class ToDoList
 	{
 		public ToDoList()
 		{
@@ -18,12 +17,10 @@
             {
             }
 
-			Navigator = new NavigationService(Navigation);
             ItemsList.RefreshCommand = new Command(DoRefresh);
             Title = "My TODO list";
 		}
 
-		public INavigationService Navigator { get; set; }
         public IMessageService MessageService { get; set; }
 		public TodoListViewModel ViewModel { get { return BindingContext as TodoListViewModel; } }
         public string Title { get; set; }
@@ -69,19 +66,14 @@
 
         private void SetupCommands(TodoItemViewModel item)
         {
-            item.NavigateCommand = new Command(() => OnNavigate(item));
-            item.SaveCommand = new Command(() => OnSave(item));
-            item.CancelEditCommand = new Command(() => OnCancelEdit(item));
+            item.NavigateCommand = new Command(() => ViewModel.NavigateTo(item));
+            item.SaveCommand = new Command(() => ViewModel.Save(item) );
+            item.CancelEditCommand = new Command(() => ViewModel.CancelEdit(item));
             item.ToggleCommand = new Command(() => OnToggle(item));
             item.ShowOptionsCommand = new Command(() => OnShowOptionsCommand(item));
             item.DeleteCommand = new Command(() => OnDeletePrompt(item));
-            item.DuplicateCommand = new Command(() => OnDuplicate(item));
-            item.EditCommand = new Command(() => OnNavigate(item));
-        }
-
-        private void OnCancelEdit(TodoItemViewModel item)
-        {
-            Navigator.ReturnToMain();
+            item.DuplicateCommand = new Command(() => ViewModel.Duplicate(item));
+            item.EditCommand = new Command(() => ViewModel.Edit(item));
         }
 
         private async void OnShowOptionsCommand(TodoItemViewModel item)
@@ -113,47 +105,18 @@
             item.Toggle();
         }
 
-        private void OnSave(TodoItemViewModel editItem)
-        {
-            if (ViewModel.Elements.Contains(editItem) == false)
-            {
-                ViewModel.Elements.Add(editItem);
-            }
-            Navigator.ReturnToMain();
-        }
-
-        private void OnDuplicate(TodoItemViewModel editItem)
-        {
-            var duplicate = CreateNew();
-            duplicate.ItemName = editItem.ItemName + " copy";
-            duplicate.IsChecked = editItem.IsChecked;
-            duplicate.Description = editItem.Description;
-
-            OnNavigate(duplicate);
-        }
-
-        private void OnNavigate(TodoItemViewModel editItem)
-        {
-            Navigator.NavigateToAsync(editItem);
-        }
-
-        public TodoItemViewModel CreateNew()
-        {
-            var newItem = new TodoItemViewModel() { ItemName = "New item:" };
-            SetupCommands(newItem);
-
-            return newItem;
-        }
-
         internal void ScrollTo(TodoItemViewModel newItem)
         {
-            ItemsList.ScrollTo(newItem, ScrollToPosition.Start, true);
+            ItemsList.ScrollTo(newItem, ScrollToPosition.End, true);
             ItemsList.SelectedItem = newItem;
         }
 
-        internal void Add(TodoItemViewModel newItem)
+        internal TodoItemViewModel CreateNew()
         {
-            ViewModel.Elements.Add(newItem);
+            var newItem = ViewModel.CreateNew();
+            SetupCommands(newItem);
+
+            return newItem;
         }
     }
 }

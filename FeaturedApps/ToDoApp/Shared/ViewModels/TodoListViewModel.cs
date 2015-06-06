@@ -9,13 +9,15 @@
 
 	public class TodoListViewModel : BaseViewModel
 	{
-		public TodoListViewModel(IDataService dataServices)
+		public TodoListViewModel(IDataService dataServices, INavigationService navigation)
 		{
 			_elements = new ObservableCollection<TodoItemViewModel>();
             DataServices = dataServices;
+            Navigation = navigation;
 		}
 
         public IDataService DataServices { get; set; }
+        public INavigationService Navigation { get; set; }
 
 		private ObservableCollection<TodoItemViewModel> _elements;
 		public ObservableCollection<TodoItemViewModel> Elements
@@ -63,9 +65,47 @@
             }
         }
 
-        public object CreateNew()
+        public TodoItemViewModel CreateNew()
         {
-            throw new System.NotImplementedException();
+            var newItem = new TodoItemViewModel() { ItemName = "New item:" };
+            
+            NavigateTo(newItem);
+
+            return newItem;
+        }
+
+        public void Save(TodoItemViewModel editItem)
+        {
+            if (Elements.Contains(editItem) == false)
+            {
+                Elements.Add(editItem);
+            }
+            Navigation.ReturnToMain();
+        }
+
+        public void CancelEdit(TodoItemViewModel item)
+        {
+            Navigation.ReturnToMain();
+        }
+
+        public void NavigateTo(TodoItemViewModel item)
+        {
+            Navigation.NavigateToAsync(item);
+        }
+
+        public void Duplicate(TodoItemViewModel item)
+        {
+            var duplicate = CreateNew();
+            duplicate.ItemName = item.ItemName + " copy";
+            duplicate.IsChecked = item.IsChecked;
+            duplicate.Description = item.Description;
+
+            NavigateTo(duplicate);
+        }
+
+        public void Edit(TodoItemViewModel item)
+        {
+            NavigateTo(item);
         }
     }
 }

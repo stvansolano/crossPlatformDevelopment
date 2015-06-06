@@ -4,15 +4,99 @@
                 xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
                 x:Class="CrossPlatformApp.EditPage"
                 Title="Edit section">
-      <StackLayout>
-        <Switch IsToggled="{Binding Path=IsChecked}" />
-        <StackLayout>
-          <Label Text="Name:" />
-          <Entry Text="{Binding Path=ItemName}" />
-          <Label Text="Description:" />
-          <Label Text="{Binding Path=Description}" />
-        </StackLayout>
-      </StackLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="ContentView">
+        <Setter Property="Padding" Value="25,0,0,0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+    <Style TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+        <Setter Property="Padding" Value="25,0,0,0" />
+      </Style>
+      <Style TargetType="Label">
+        <Setter Property="YAlign" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentView HorizontalOptions="FillAndExpand">
+    <TableView Intent="Data">
+    <TableView.Root>
+      <TableRoot>
+        <TableSection Title="Task Details">
+          <EntryCell Label="Task Name"/>
+          <ViewCell>
+            <ViewCell.View>
+              <ContentView>
+                <Label Text="Task Name" />
+                <Entry  Placeholder="Your task name here" Text="{Binding Path=ItemName}" />
+              </ContentView>
+            </ViewCell.View>
+          </ViewCell>
+          <ViewCell>
+            <ViewCell.View>
+              <ContentView>
+              <Label Text="Details" />  
+              </ContentView>
+            </ViewCell.View>
+          </ViewCell>
+          <ViewCell>
+            <ContentView>
+              <Editor Text="{Binding Path=Description}" />    
+            </ContentView>
+          </ViewCell>
+        </TableSection>
+        <TableSection Title="Status">
+          <ViewCell>
+            <ContentView>
+              <StackLayout HorizontalOptions="EndAndExpand"
+                           Padding="0,0,75,0">
+                <Label Text="Reminder" />
+                <Switch IsToggled="{Binding Path=IsChecked}"
+                        HorizontalOptions="FillAndExpand" />
+              </StackLayout>
+            </ContentView>
+          </ViewCell>
+          <ViewCell>
+            <ContentView HorizontalOptions="EndAndExpand">
+              <Grid Padding="0,0,75,0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Progress" />
+                <Slider Minimum="0" Maximum="100"
+                        Grid.Column="1"
+                        x:Name="SliderStatus"
+                        MinimumWidthRequest="200"
+                        HorizontalOptions="FillAndExpand"
+                        Value="{Binding Path=Progress}"
+                        />
+              <Label Grid.Column="2" Text="{Binding Path=Value, Source={x:Reference SliderStatus}}" />
+              </Grid>
+            </ContentView>
+          </ViewCell>
+          <ViewCell>
+            <ContentView HorizontalOptions="EndAndExpand">
+              <StackLayout Padding="0,0,75,0">
+                <Label Text="Due Date" />
+                <DatePicker/>
+              </StackLayout>
+            </ContentView>
+          </ViewCell>
+          <ViewCell>
+            <ContentView>
+            </ContentView>
+          </ViewCell>
+        </TableSection>
+        <TableSection>
+        </TableSection>
+      </TableRoot>
+    </TableView.Root>
+  </TableView>
+  </ContentView>
   <Page.ToolbarItems>
     <ToolbarItem Text="Cancel" Command="{Binding Path=CancelEditCommand}" />
     <ToolbarItem Text="Save" Command="{Binding Path=SaveCommand}" />
