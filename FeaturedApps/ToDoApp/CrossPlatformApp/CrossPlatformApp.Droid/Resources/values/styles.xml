@@ -9,7 +9,8 @@
     <!--@style/android:Theme.Material-->
     <!--@style/android:Theme.Material.Light-->
     <!--@style/android:Theme.Material.Light.DarkActionBar-->
-    
+    <!--@android:style/Theme.Holo.Light.DarkActionBar-->
+
     <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="android:colorPrimary">@color/colorPrimary</item>
 
@@ -21,6 +22,16 @@
     <item name="android:navigationBarColor">@color/navigationBarColor</item>
     <item name="android:statusBarColor">@color/statusBarColor</item>
 
+    <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    <item name="android:actionBarTabStyle">@style/MyTheme.ActionBar.TabStyle</item>
+    <item name="android:listViewStyle">@style/MyTheme.ListView</item>
+
+    <!--<item name="android:icon">@android:color/transparent</item>-->
+    <!--<item name="android:background">@drawable/ab_solid_appolo</item>-->
+    <!--<item name="android:backgroundSplit">@drawable/ab_bottom_solid_appolo</item>-->
+    <!--<item name="android:icon">@drawable/ic_action_launcher</item>-->
+
+    <!--android:listViewStyle-->
     <!--<item name="popupMenuStyle">@style/PopupMenu.Mytheme</item>
     <item name="dropDownListViewStyle">@style/DropDownListView.Mytheme</item>
     <item name="actionBarTabStyle">@style/ActionBarTabStyle.Mytheme</item>
@@ -33,8 +44,34 @@
 
     <!--<item name="android:windowNoTitle">true</item>-->
   </style>
+  <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    <item name="android:background">@color/colorPrimaryDark</item>
+    <item name="android:textColor">@android:color/white</item>
+    <!--@android:color/transparent-->
+  </style>
+  <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <!-- tabs styles -->
+  <style name="MyTheme.ActionBar.TabStyle" parent="@style/Widget.AppCompat.ActionBar.TabBar">
+    <item name="android:background">@color/colorPrimary</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="MyTheme.ListView" parent="android:style/Widget.ListView">
+  <!--@android:style/Widget.Holo.Light.ListView-->
+    <item name="android:overScrollMode">always</item>
+    <item name="background">@android:color/white</item>
+      <!--<item name="android:divider">@color/light_gray</item>-->
+      <item name="android:dividerHeight">2dp</item>
+      <!--<item name="android:listSelector">@drawable/actionbar_background_green</item>-->
+      <item name="android:drawSelectorOnTop">false</item>
+      <item name="android:cacheColorHint">@color/textColorPrimary</item>
+      <item name="android:textColor">@color/textColorPrimary</item>
+  </style>
 
   <style name="Theme.MyTheme" parent="Theme.MyTheme.Base">
-    
   </style>
 </resources>

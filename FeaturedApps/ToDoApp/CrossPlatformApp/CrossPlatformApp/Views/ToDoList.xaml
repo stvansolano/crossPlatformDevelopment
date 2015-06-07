@@ -13,8 +13,7 @@
 			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
                 IsGroupingEnabled="{Binding Path=IsGrouped}"
                 RefreshCommand="{Binding Path=RefreshCommand}"
-                HasUnevenRows="True"
-                SeparatorColor="#ddd">
+                HasUnevenRows="True">
         <ListView.ItemTemplate>
 						<DataTemplate>
               <local:ToDoItemCell Command="{Binding Path=NavigateCommand}" />

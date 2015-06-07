@@ -244,6 +244,7 @@
     <AndroidResource Include="Resources\values-v21\Colors.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\values\AppCompat.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrossPlatformApp\CrossPlatformApp.csproj">

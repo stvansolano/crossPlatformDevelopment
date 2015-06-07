@@ -73,7 +73,7 @@
     {
         public ApplicationViewModel (IDataService dataService, INavigationService navigation)
 	    {
-            Title = string.Empty;
+            Title = "ToDoApp";
             CurrentList = new TodoListViewModel(dataService, navigation);
             Sections = new ObservableCollection<object>();
         }

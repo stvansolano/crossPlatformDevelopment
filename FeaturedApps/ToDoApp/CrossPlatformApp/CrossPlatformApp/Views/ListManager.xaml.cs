@@ -15,11 +15,9 @@
             {
             }
 
-            Navigator = new NavigationService(Navigation);
             Title = "My Lists";
         }
 
         public string Title { get; set; }
-        public NavigationService Navigator { get; set; }
     }
 }

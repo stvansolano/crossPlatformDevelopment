@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?> <resources>
   <!-- Top colors -->
-  <color name="colorPrimaryDark">#424242</color>
-  <color name="colorPrimary">#424242</color>
-  
+  <color name="colorPrimaryDark">#009688</color>
+  <color name="colorPrimary">#4DB6AC</color>
+
   <!-- Text colors -->
-  <color name="textColorPrimary">#424242</color>
+  <color name="textColorPrimary">#004D40</color>
   <color name="colorAccent">#B455B6</color>
-  
+
   <!-- Background and bars -->
-  <color name="windowBackground">#FAFAFA</color>
-  <color name="navigationBarColor">#FF6D00</color><!--212121-->
-  <color name="statusBarColor">#424242</color>
+  <color name="windowBackground">#FFFFFF</color>
+  <color name="navigationBarColor">#FF6D00</color>
+  <!--212121-->
+  <color name="statusBarColor">#B455B6</color>
 </resources>
