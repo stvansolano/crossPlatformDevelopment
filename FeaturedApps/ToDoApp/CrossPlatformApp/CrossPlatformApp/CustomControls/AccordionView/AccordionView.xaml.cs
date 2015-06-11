@@ -1,30 +1,25 @@
 ﻿namespace CrossPlatformApp
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using Xamarin.Forms;
 
     public partial class AccordionView
     {
         private ObservableCollection<AccordionItem> _items;
+        public ICollection<AccordionItem> Items
+        {
+            get { return _items; }
+        }
 
         public AccordionView()
         {
             _items = new ObservableCollection<AccordionItem>();
             InitializeComponent();
-            
-            _items.Add(new AccordionItem { Title = "Item #1", Content = "Body content #1", IsSelected = true });
-            _items.Add(new AccordionItem { Title = "Item #2", Content = "Body content #2" });
-            _items.Add(new AccordionItem { Title = "Item #3", Content = "Body content #3" });
-
             ItemsSource = _items;
         }
 
-        protected override void OnChildAdded(Element child)
-        {
-            base.OnChildAdded(child);
-        }
-
-        internal void Toggle(AccordionCell selectedItem)
+        public void Toggle(AccordionCell selectedItem)
         {
             foreach (var item in _items)
             {

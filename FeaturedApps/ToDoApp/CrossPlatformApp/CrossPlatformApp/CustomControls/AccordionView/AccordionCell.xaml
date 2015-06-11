@@ -4,20 +4,36 @@
           x:Class="CrossPlatformApp.AccordionCell"
           xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
   <ContentView>
-    <StackLayout Orientation="Vertical">
-      <Label Text="{Binding Path=Title}" />
-      <Label Text="{Binding Path=Content}">
-        <Label.Style>
-          <Style TargetType="StackLayout">
+    <Grid Padding="5">
+      <StackLayout Orientation="Vertical"
+                   Padding="0,0,20,0">
+        <Label Text="{Binding Path=Title}" FontAttributes="Bold" />
+        <Label Text="{Binding Path=Content}">
+          <Label.Style>
+            <Style TargetType="StackLayout">
+              <Style.Triggers>
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding Path=IsSelected}" Value="False">
+                  <Setter Property="HeightRequest" Value="0" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </Label.Style>
+        </Label>
+      </StackLayout>
+      <Image Source="ic_chevron.png"
+             HorizontalOptions="EndAndExpand">
+        <Image.Style>
+          <Style TargetType="Image">
             <Style.Triggers>
-              <DataTrigger TargetType="Label"
-                           Binding="{Binding Path=IsSelected}" Value="False">
-                <Setter Property="HeightRequest" Value="0" />
+              <DataTrigger TargetType="Image"
+                           Binding="{Binding Path=IsSelected}" Value="True">
+                <Setter Property="Rotation" Value="90" />
               </DataTrigger>
             </Style.Triggers>
           </Style>
-        </Label.Style>
-      </Label>
-    </StackLayout>
+        </Image.Style>
+      </Image>
+    </Grid>
   </ContentView>
 </ViewCell>

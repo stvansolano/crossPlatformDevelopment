@@ -3,7 +3,8 @@
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           x:Class="CrossPlatformApp.AccordionView"
           HasUnevenRows="True"
-          xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+          xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+          SeparatorColor="#EEEEEE">
   <ListView.ItemTemplate>
     <DataTemplate>
       <local:AccordionCell IsSelected="{Binding Path=IsSelected}" />
