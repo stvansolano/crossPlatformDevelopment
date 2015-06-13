@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="CrossPlatformApp.Pages.MasterDetailMainPage"
+                  xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+  <MasterDetailPage.Resources>
+    <ResourceDictionary>
+      <local:ToDoList x:Key="MainList" />
+      <local:ListManager x:Key="AllLists" />
+    </ResourceDictionary>
+  </MasterDetailPage.Resources>
+  <MasterDetailPage.Master>
+    <ContentPage Title="Master"
+                 BackgroundColor="#333333"
+                 Icon="settings.png">
+      <ContentView>
+        <StackLayout VerticalOptions="FillAndExpand">
+          <Button Text="Manage lists" x:Name="ManageListButton" />
+          <Button Text="Showcase" />
+        </StackLayout>
+      </ContentView>
+    </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <ContentPage x:Name="CurrentPageHolder" Title="Detail" />
+  </MasterDetailPage.Detail>
+  <Page.ToolbarItems>
+    <ToolbarItem Text="New" Command="{Binding Path=NewItemCommand}" />
+    <ToolbarItem Text="Clear" Command="{Binding Path=ClearListCommand}" />
+  </Page.ToolbarItems>
+</MasterDetailPage>

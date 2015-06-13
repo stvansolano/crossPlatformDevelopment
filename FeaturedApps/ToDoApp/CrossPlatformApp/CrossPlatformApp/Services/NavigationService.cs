@@ -1,10 +1,10 @@
 ﻿namespace CrossPlatformApp.Services
 {
-	using System.Threading.Tasks;
-	using Shared.Infrastructure.Services;
-	using Xamarin.Forms;
-	using Shared.ViewModels;
+    using Shared.Infrastructure.Services;
+    using Shared.ViewModels;
     using System.Linq;
+    using System.Threading.Tasks;
+    using Xamarin.Forms;
 
 	public class NavigationService : INavigationService
 	{
@@ -15,18 +15,19 @@
 
 		protected INavigation Navigation { get; set; }
 
-        async void INavigationService.NavigateToAsync(object context)
+        Task INavigationService.NavigateToAsync(object context)
         {
             try
             {
                 if (context is TodoItemViewModel)
                 {
-                    await NavigateTo<EditPage>(context);
+                    return NavigateTo<EditPage>(context);
                 }
             }
             catch (System.Exception ex)
             {
             }
+            return Task.Factory.StartNew(() => { });
         }
 
 		private Task NavigateTo<TPage>(object context)
@@ -38,6 +39,7 @@
             {
                 navigable = new NavigationPage(newPage);
             }
+            navigable.SetValue(NavigationPage.HasBackButtonProperty, true);
 
             try
             {

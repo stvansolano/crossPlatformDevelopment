@@ -7,21 +7,16 @@
 
 	public class App : Application
 	{
-		private MainPage _mainPage;
+        private NavigationPage<MasterDetailMainPage> _mainPage;
 		
         public App()
 		{
-			// The root page of your application
-            _mainPage = new MainPage();
-
-            var navigationPage = new NavigationPage(_mainPage);
-
-            MainPage = navigationPage;
+            MainPage = _mainPage = new NavigationPage<MasterDetailMainPage>();
 		}
 
 		protected override void OnStart()
 		{
-			_mainPage.Start();
+			_mainPage.CurrentPage.Start();
 		}
 
 		protected override void OnSleep()

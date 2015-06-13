@@ -38,6 +38,7 @@
     <Compile Include="Services\IMessageService.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\MenuOption.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\TodoItemViewModel.cs" />
     <Compile Include="ViewModels\TodoListViewModel.cs" />

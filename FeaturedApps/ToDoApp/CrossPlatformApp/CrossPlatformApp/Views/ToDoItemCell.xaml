@@ -32,7 +32,7 @@
           <VisualElement.Triggers>
             <DataTrigger TargetType="Image"
                           Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
-              <Setter Property="Source" Value="check.png" />
+              <Setter Property="local:ImageFactory.CachedSource" Value="check.png" />
             </DataTrigger>
           </VisualElement.Triggers>
         </local:TappedImage>

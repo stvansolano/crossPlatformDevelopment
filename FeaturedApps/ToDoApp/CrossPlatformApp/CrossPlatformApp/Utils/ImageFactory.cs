@@ -38,6 +38,12 @@
             {
                 return;
             }
+
+            var cache = GetSharedFactory(sender);
+            if (cache != null && string.IsNullOrEmpty(oldValue) == false)
+            {
+                LoadImageSourceAsync(instance, cache);
+            }
         }
 
         #endregion
@@ -75,9 +81,9 @@
             LoadImageSourceAsync(instance, newValue);
         }
 
-        private static void LoadImageSourceAsync(Image instance, ImagesCache images)
+        private static void LoadImageSourceAsync(Image instance, ImagesCache cache)
         {
-            var factory = images;
+            var factory = cache;
             if (factory != null)
             {
                 instance.Source = factory.FromCachedResource(GetCachedSource(instance));

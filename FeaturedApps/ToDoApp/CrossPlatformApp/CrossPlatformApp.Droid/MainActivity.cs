@@ -9,6 +9,7 @@
     using Android.OS;
     using Android.Graphics.Drawables;
     using Xamarin.Forms.Platform.Android;
+    using Android.Support.V4.View;
 
     [Activity(
         Label = "My To-Do list showcase",
@@ -37,10 +38,34 @@
             {
             }
 
+            //ActionBar.CustomView = LayoutInflater.Inflate(Resource.Layout.MyCard, null);
+            //ActionBar.DisplayOptions = ActionBarDisplayOptions.ShowCustom;
+
+            /*
+            ActionBar.CustomView = Inflate(context, Resource.Layout.PersonControl, this);
+            ActionBar.DisplayOptions = ActionBarDisplayOptions.ShowCustom;
+            ActionBar.SetHomeButtonEnabled(true);
+            */
             /*if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
             {
                 ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
             }*/
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {/*
+            MenuInflater inflater = base.MenuInflater;
+            inflater.Inflate(Resource.Menu.main_activity_actions, menu);
+
+            var searchItem = menu.FindItem(Resource.Id.action_search);
+            SearchView searchView = (SearchView)MenuItemCompat.GetActionView(searchItem);
+            */
+
+            //menu.FindItem(Resource.Id.action_search).GetActionView();
+
+            return base.OnCreateOptionsMenu(menu);
+
+            //MenuInflater.Inflate(Resource.Menu.customMenu, menu);
         }
     }
 }

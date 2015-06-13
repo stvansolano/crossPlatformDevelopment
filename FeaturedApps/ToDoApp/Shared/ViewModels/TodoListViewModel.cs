@@ -17,7 +17,7 @@
 		}
 
         public IDataService DataServices { get; set; }
-        public INavigationService Navigation { get; set; }
+        protected INavigationService Navigation { get; set; }
 
 		private ObservableCollection<TodoItemViewModel> _elements;
 		public ObservableCollection<TodoItemViewModel> Elements
@@ -74,18 +74,18 @@
             return newItem;
         }
 
-        public void Save(TodoItemViewModel editItem)
+        public async void Save(TodoItemViewModel editItem)
         {
             if (Elements.Contains(editItem) == false)
             {
                 Elements.Add(editItem);
             }
-            Navigation.ReturnToMain();
+            await Navigation.ReturnToMain();
         }
 
-        public void CancelEdit(TodoItemViewModel item)
+        public async void CancelEdit(TodoItemViewModel item)
         {
-            Navigation.ReturnToMain();
+            await Navigation.ReturnToMain();
         }
 
         public void NavigateTo(TodoItemViewModel item)

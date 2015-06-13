@@ -36,17 +36,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="CustomControls\AccordionView\AccordionCell.xaml.cs">
+      <DependentUpon>AccordionCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AccordionView\AccordionView.xaml.cs">
+      <DependentUpon>AccordionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\AccordionView\Example.cs" />
     <Compile Include="CustomControls\EditableLabel.xaml.cs">
       <DependentUpon>EditableLabel.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\TabView.cs" />
+    <Compile Include="CustomControls\ToggleImage\Example.xaml.cs">
+      <DependentUpon>Example.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ToggleImage\ToggleImage.xaml.cs">
+      <DependentUpon>ToggleImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterDetailMainPage.xaml.cs">
+      <DependentUpon>MasterDetailMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationPage.cs" />
     <Compile Include="Services\MessageService.cs" />
     <Compile Include="CustomControls\TappedImage.cs" />
     <Compile Include="Pages\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Pages\TabbedMainPage.xaml.cs">
+      <DependentUpon>TabbedMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MasterDetail.xaml.cs">
       <DependentUpon>MasterDetail.xaml</DependentUpon>
@@ -69,7 +86,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\MainPage.xaml">
+    <EmbeddedResource Include="Pages\TabbedMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -153,6 +170,31 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ListManager.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControls\AccordionView\AccordionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControls\AccordionView\AccordionCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControls\ToggleImage\ToggleImage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomControls\ToggleImage\Example.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MasterDetailMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
