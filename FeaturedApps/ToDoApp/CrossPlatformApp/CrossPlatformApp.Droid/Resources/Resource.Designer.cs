@@ -26,6 +26,42 @@ namespace CrossPlatformApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::FAB.Droid.Resource.Attribute.fab_colorDisabled = global::CrossPlatformApp.Droid.Resource.Attribute.fab_colorDisabled;
+			global::FAB.Droid.Resource.Attribute.fab_colorNormal = global::CrossPlatformApp.Droid.Resource.Attribute.fab_colorNormal;
+			global::FAB.Droid.Resource.Attribute.fab_colorPressed = global::CrossPlatformApp.Droid.Resource.Attribute.fab_colorPressed;
+			global::FAB.Droid.Resource.Attribute.fab_colorRipple = global::CrossPlatformApp.Droid.Resource.Attribute.fab_colorRipple;
+			global::FAB.Droid.Resource.Attribute.fab_shadow = global::CrossPlatformApp.Droid.Resource.Attribute.fab_shadow;
+			global::FAB.Droid.Resource.Attribute.fab_size = global::CrossPlatformApp.Droid.Resource.Attribute.fab_size;
+			global::FAB.Droid.Resource.Color.fab_material_blue_500 = global::CrossPlatformApp.Droid.Resource.Color.fab_material_blue_500;
+			global::FAB.Droid.Resource.Dimension.fab_elevation_lollipop = global::CrossPlatformApp.Droid.Resource.Dimension.fab_elevation_lollipop;
+			global::FAB.Droid.Resource.Dimension.fab_scroll_threshold = global::CrossPlatformApp.Droid.Resource.Dimension.fab_scroll_threshold;
+			global::FAB.Droid.Resource.Dimension.fab_shadow_size = global::CrossPlatformApp.Droid.Resource.Dimension.fab_shadow_size;
+			global::FAB.Droid.Resource.Dimension.fab_size_mini = global::CrossPlatformApp.Droid.Resource.Dimension.fab_size_mini;
+			global::FAB.Droid.Resource.Dimension.fab_size_normal = global::CrossPlatformApp.Droid.Resource.Dimension.fab_size_normal;
+			global::FAB.Droid.Resource.Drawable.fab_shadow = global::CrossPlatformApp.Droid.Resource.Drawable.fab_shadow;
+			global::FAB.Droid.Resource.Drawable.fab_shadow_mini = global::CrossPlatformApp.Droid.Resource.Drawable.fab_shadow_mini;
+			global::FAB.Droid.Resource.Id.mini = global::CrossPlatformApp.Droid.Resource.Id.mini;
+			global::FAB.Droid.Resource.Id.normal = global::CrossPlatformApp.Droid.Resource.Id.normal;
+			global::FAB.Droid.Resource.String.ApplicationName = global::CrossPlatformApp.Droid.Resource.String.ApplicationName;
+			global::FAB.Droid.Resource.String.Hello = global::CrossPlatformApp.Droid.Resource.String.Hello;
+			global::FAB.Droid.Resource.String.define_FloatingActionButton = global::CrossPlatformApp.Droid.Resource.String.define_FloatingActionButton;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_author = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_author;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_authorWebsite = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_authorWebsite;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_isOpenSource = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_isOpenSource;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_libraryDescription = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_libraryDescription;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_libraryName = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_libraryName;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_libraryVersion = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_libraryVersion;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_libraryWebsite = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_libraryWebsite;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_licenseId = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_licenseId;
+			global::FAB.Droid.Resource.String.library_FloatingActionButton_repositoryLink = global::CrossPlatformApp.Droid.Resource.String.library_FloatingActionButton_repositoryLink;
+			global::FAB.Droid.Resource.String.library_name = global::CrossPlatformApp.Droid.Resource.String.library_name;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorNormal;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorPressed;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorRipple;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_shadow = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_shadow;
+			global::FAB.Droid.Resource.Styleable.FloatingActionButton_fab_size = global::CrossPlatformApp.Droid.Resource.Styleable.FloatingActionButton_fab_size;
 			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::CrossPlatformApp.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Resource.String.Hello = global::CrossPlatformApp.Droid.Resource.String.Hello;
 		}
@@ -348,6 +384,24 @@ namespace CrossPlatformApp.Droid
 			
 			// aapt resource value: 0x7f01001e
 			public const int expandActivityOverflowButtonDrawable = 2130771998;
+			
+			// aapt resource value: 0x7f0100c9
+			public const int fab_colorDisabled = 2130772169;
+			
+			// aapt resource value: 0x7f0100c8
+			public const int fab_colorNormal = 2130772168;
+			
+			// aapt resource value: 0x7f0100c7
+			public const int fab_colorPressed = 2130772167;
+			
+			// aapt resource value: 0x7f0100ca
+			public const int fab_colorRipple = 2130772170;
+			
+			// aapt resource value: 0x7f0100cb
+			public const int fab_shadow = 2130772171;
+			
+			// aapt resource value: 0x7f0100cc
+			public const int fab_size = 2130772172;
 			
 			// aapt resource value: 0x7f010028
 			public const int gapBetweenBars = 2130772008;
@@ -720,29 +774,29 @@ namespace CrossPlatformApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06003a
-			public const int abc_background_cache_hint_selector_material_dark = 2131099706;
-			
 			// aapt resource value: 0x7f06003b
-			public const int abc_background_cache_hint_selector_material_light = 2131099707;
+			public const int abc_background_cache_hint_selector_material_dark = 2131099707;
+			
+			// aapt resource value: 0x7f06003c
+			public const int abc_background_cache_hint_selector_material_light = 2131099708;
 			
 			// aapt resource value: 0x7f060007
 			public const int abc_input_method_navigation_guard = 2131099655;
 			
-			// aapt resource value: 0x7f06003c
-			public const int abc_primary_text_disable_only_material_dark = 2131099708;
-			
 			// aapt resource value: 0x7f06003d
-			public const int abc_primary_text_disable_only_material_light = 2131099709;
+			public const int abc_primary_text_disable_only_material_dark = 2131099709;
 			
 			// aapt resource value: 0x7f06003e
-			public const int abc_primary_text_material_dark = 2131099710;
+			public const int abc_primary_text_disable_only_material_light = 2131099710;
 			
 			// aapt resource value: 0x7f06003f
-			public const int abc_primary_text_material_light = 2131099711;
+			public const int abc_primary_text_material_dark = 2131099711;
 			
 			// aapt resource value: 0x7f060040
-			public const int abc_search_url_text = 2131099712;
+			public const int abc_primary_text_material_light = 2131099712;
+			
+			// aapt resource value: 0x7f060041
+			public const int abc_search_url_text = 2131099713;
 			
 			// aapt resource value: 0x7f060008
 			public const int abc_search_url_text_normal = 2131099656;
@@ -753,11 +807,11 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f06000a
 			public const int abc_search_url_text_selected = 2131099658;
 			
-			// aapt resource value: 0x7f060041
-			public const int abc_secondary_text_material_dark = 2131099713;
-			
 			// aapt resource value: 0x7f060042
-			public const int abc_secondary_text_material_light = 2131099714;
+			public const int abc_secondary_text_material_dark = 2131099714;
+			
+			// aapt resource value: 0x7f060043
+			public const int abc_secondary_text_material_light = 2131099715;
 			
 			// aapt resource value: 0x7f06000b
 			public const int accent_material_dark = 2131099659;
@@ -821,6 +875,9 @@ namespace CrossPlatformApp.Droid
 			
 			// aapt resource value: 0x7f06001c
 			public const int dim_foreground_material_light = 2131099676;
+			
+			// aapt resource value: 0x7f06003a
+			public const int fab_material_blue_500 = 2131099706;
 			
 			// aapt resource value: 0x7f06001d
 			public const int highlighted_text_material_dark = 2131099677;
@@ -909,11 +966,11 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f060037
 			public const int switch_thumb_disabled_material_light = 2131099703;
 			
-			// aapt resource value: 0x7f060043
-			public const int switch_thumb_material_dark = 2131099715;
-			
 			// aapt resource value: 0x7f060044
-			public const int switch_thumb_material_light = 2131099716;
+			public const int switch_thumb_material_dark = 2131099716;
+			
+			// aapt resource value: 0x7f060045
+			public const int switch_thumb_material_light = 2131099717;
 			
 			// aapt resource value: 0x7f060038
 			public const int switch_thumb_normal_material_dark = 2131099704;
@@ -1137,6 +1194,21 @@ namespace CrossPlatformApp.Droid
 			
 			// aapt resource value: 0x7f080041
 			public const int disabled_alpha_material_light = 2131230785;
+			
+			// aapt resource value: 0x7f080046
+			public const int fab_elevation_lollipop = 2131230790;
+			
+			// aapt resource value: 0x7f080045
+			public const int fab_scroll_threshold = 2131230789;
+			
+			// aapt resource value: 0x7f080044
+			public const int fab_shadow_size = 2131230788;
+			
+			// aapt resource value: 0x7f080043
+			public const int fab_size_mini = 2131230787;
+			
+			// aapt resource value: 0x7f080042
+			public const int fab_size_normal = 2131230786;
 			
 			static Dimension()
 			{
@@ -1368,88 +1440,97 @@ namespace CrossPlatformApp.Droid
 			public const int check = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int ic_chevron = 2130837576;
+			public const int fab_shadow = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int ic_delete = 2130837577;
+			public const int fab_shadow_mini = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int icon = 2130837578;
+			public const int ic_chevron = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int list_focused_mytheme = 2130837579;
+			public const int ic_delete = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int list_pressed_mytheme = 2130837580;
+			public const int ic_launcher = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int menu_dropdown_panel_mytheme = 2130837581;
+			public const int icon = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int plus = 2130837582;
+			public const int list_focused_mytheme = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int progress_bg_mytheme = 2130837583;
+			public const int list_pressed_mytheme = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int progress_horizontal_mytheme = 2130837584;
+			public const int menu_dropdown_panel_mytheme = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int progress_primary_mytheme = 2130837585;
+			public const int plus = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int progress_secondary_mytheme = 2130837586;
+			public const int progress_bg_mytheme = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int refresh = 2130837587;
+			public const int progress_horizontal_mytheme = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int selectable_background_mytheme = 2130837588;
+			public const int progress_primary_mytheme = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int settings = 2130837589;
+			public const int progress_secondary_mytheme = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int slideout = 2130837590;
+			public const int refresh = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int spinner_ab_default_mytheme = 2130837591;
+			public const int selectable_background_mytheme = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int spinner_ab_disabled_mytheme = 2130837592;
+			public const int settings = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int spinner_ab_focused_mytheme = 2130837593;
+			public const int slideout = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int spinner_ab_pressed_mytheme = 2130837594;
+			public const int spinner_ab_default_mytheme = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int spinner_background_ab_mytheme = 2130837595;
+			public const int spinner_ab_disabled_mytheme = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int tab_indicator_ab_mytheme = 2130837596;
+			public const int spinner_ab_focused_mytheme = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int tab_selected_focused_mytheme = 2130837597;
+			public const int spinner_ab_pressed_mytheme = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int tab_selected_mytheme = 2130837598;
+			public const int spinner_background_ab_mytheme = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int tab_selected_pressed_mytheme = 2130837599;
+			public const int tab_indicator_ab_mytheme = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int tab_unselected_focused_mytheme = 2130837600;
+			public const int tab_selected_focused_mytheme = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int tab_unselected_mytheme = 2130837601;
+			public const int tab_selected_mytheme = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int tab_unselected_pressed_mytheme = 2130837602;
+			public const int tab_selected_pressed_mytheme = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int uncheck = 2130837603;
+			public const int tab_unselected_focused_mytheme = 2130837603;
+			
+			// aapt resource value: 0x7f020064
+			public const int tab_unselected_mytheme = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int tab_unselected_pressed_mytheme = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int uncheck = 2130837606;
 			
 			static Drawable()
 			{
@@ -1464,29 +1545,29 @@ namespace CrossPlatformApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090040
-			public const int action_bar = 2131296320;
+			// aapt resource value: 0x7f090041
+			public const int action_bar = 2131296321;
 			
 			// aapt resource value: 0x7f090000
 			public const int action_bar_activity_content = 2131296256;
 			
-			// aapt resource value: 0x7f09003f
-			public const int action_bar_container = 2131296319;
+			// aapt resource value: 0x7f090040
+			public const int action_bar_container = 2131296320;
 			
-			// aapt resource value: 0x7f09003b
-			public const int action_bar_root = 2131296315;
+			// aapt resource value: 0x7f09003c
+			public const int action_bar_root = 2131296316;
 			
 			// aapt resource value: 0x7f090001
 			public const int action_bar_spinner = 2131296257;
 			
+			// aapt resource value: 0x7f090025
+			public const int action_bar_subtitle = 2131296293;
+			
 			// aapt resource value: 0x7f090024
-			public const int action_bar_subtitle = 2131296292;
+			public const int action_bar_title = 2131296292;
 			
-			// aapt resource value: 0x7f090023
-			public const int action_bar_title = 2131296291;
-			
-			// aapt resource value: 0x7f090041
-			public const int action_context_bar = 2131296321;
+			// aapt resource value: 0x7f090042
+			public const int action_context_bar = 2131296322;
 			
 			// aapt resource value: 0x7f090002
 			public const int action_menu_divider = 2131296258;
@@ -1494,20 +1575,20 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f090003
 			public const int action_menu_presenter = 2131296259;
 			
+			// aapt resource value: 0x7f09003e
+			public const int action_mode_bar = 2131296318;
+			
 			// aapt resource value: 0x7f09003d
-			public const int action_mode_bar = 2131296317;
-			
-			// aapt resource value: 0x7f09003c
-			public const int action_mode_bar_stub = 2131296316;
-			
-			// aapt resource value: 0x7f090025
-			public const int action_mode_close_button = 2131296293;
+			public const int action_mode_bar_stub = 2131296317;
 			
 			// aapt resource value: 0x7f090026
-			public const int activity_chooser_view_content = 2131296294;
+			public const int action_mode_close_button = 2131296294;
 			
-			// aapt resource value: 0x7f090030
-			public const int alertTitle = 2131296304;
+			// aapt resource value: 0x7f090027
+			public const int activity_chooser_view_content = 2131296295;
+			
+			// aapt resource value: 0x7f090031
+			public const int alertTitle = 2131296305;
 			
 			// aapt resource value: 0x7f090016
 			public const int always = 2131296278;
@@ -1515,29 +1596,29 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f090013
 			public const int beginning = 2131296275;
 			
-			// aapt resource value: 0x7f090036
-			public const int buttonPanel = 2131296310;
+			// aapt resource value: 0x7f090037
+			public const int buttonPanel = 2131296311;
 			
-			// aapt resource value: 0x7f090038
-			public const int checkbox = 2131296312;
+			// aapt resource value: 0x7f090039
+			public const int checkbox = 2131296313;
 			
 			// aapt resource value: 0x7f090017
 			public const int collapseActionView = 2131296279;
 			
-			// aapt resource value: 0x7f090031
-			public const int contentPanel = 2131296305;
+			// aapt resource value: 0x7f090032
+			public const int contentPanel = 2131296306;
+			
+			// aapt resource value: 0x7f090036
+			public const int custom = 2131296310;
 			
 			// aapt resource value: 0x7f090035
-			public const int custom = 2131296309;
+			public const int customPanel = 2131296309;
 			
-			// aapt resource value: 0x7f090034
-			public const int customPanel = 2131296308;
+			// aapt resource value: 0x7f09003f
+			public const int decor_content_parent = 2131296319;
 			
-			// aapt resource value: 0x7f09003e
-			public const int decor_content_parent = 2131296318;
-			
-			// aapt resource value: 0x7f090029
-			public const int default_activity_button = 2131296297;
+			// aapt resource value: 0x7f09002a
+			public const int default_activity_button = 2131296298;
 			
 			// aapt resource value: 0x7f09001b
 			public const int dialog = 2131296283;
@@ -1548,17 +1629,17 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f09001c
 			public const int dropdown = 2131296284;
 			
-			// aapt resource value: 0x7f090042
-			public const int edit_query = 2131296322;
+			// aapt resource value: 0x7f090043
+			public const int edit_query = 2131296323;
 			
 			// aapt resource value: 0x7f090014
 			public const int end = 2131296276;
 			
-			// aapt resource value: 0x7f090027
-			public const int expand_activities_button = 2131296295;
+			// aapt resource value: 0x7f090028
+			public const int expand_activities_button = 2131296296;
 			
-			// aapt resource value: 0x7f090037
-			public const int expanded_menu = 2131296311;
+			// aapt resource value: 0x7f090038
+			public const int expanded_menu = 2131296312;
 			
 			// aapt resource value: 0x7f090004
 			public const int home = 2131296260;
@@ -1566,23 +1647,26 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f09000d
 			public const int homeAsUp = 2131296269;
 			
-			// aapt resource value: 0x7f09002b
-			public const int icon = 2131296299;
+			// aapt resource value: 0x7f09002c
+			public const int icon = 2131296300;
 			
 			// aapt resource value: 0x7f090018
 			public const int ifRoom = 2131296280;
 			
-			// aapt resource value: 0x7f090028
-			public const int image = 2131296296;
+			// aapt resource value: 0x7f090029
+			public const int image = 2131296297;
 			
 			// aapt resource value: 0x7f090009
 			public const int listMode = 2131296265;
 			
-			// aapt resource value: 0x7f09002a
-			public const int list_item = 2131296298;
+			// aapt resource value: 0x7f09002b
+			public const int list_item = 2131296299;
 			
 			// aapt resource value: 0x7f090015
 			public const int middle = 2131296277;
+			
+			// aapt resource value: 0x7f090023
+			public const int mini = 2131296291;
 			
 			// aapt resource value: 0x7f09001e
 			public const int multiply = 2131296286;
@@ -1596,8 +1680,8 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f09000a
 			public const int normal = 2131296266;
 			
-			// aapt resource value: 0x7f09002d
-			public const int parentPanel = 2131296301;
+			// aapt resource value: 0x7f09002e
+			public const int parentPanel = 2131296302;
 			
 			// aapt resource value: 0x7f090005
 			public const int progress_circular = 2131296261;
@@ -1605,50 +1689,50 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f090006
 			public const int progress_horizontal = 2131296262;
 			
-			// aapt resource value: 0x7f09003a
-			public const int radio = 2131296314;
+			// aapt resource value: 0x7f09003b
+			public const int radio = 2131296315;
 			
 			// aapt resource value: 0x7f09001f
 			public const int screen = 2131296287;
 			
-			// aapt resource value: 0x7f090032
-			public const int scrollView = 2131296306;
-			
-			// aapt resource value: 0x7f090044
-			public const int search_badge = 2131296324;
-			
-			// aapt resource value: 0x7f090043
-			public const int search_bar = 2131296323;
+			// aapt resource value: 0x7f090033
+			public const int scrollView = 2131296307;
 			
 			// aapt resource value: 0x7f090045
-			public const int search_button = 2131296325;
+			public const int search_badge = 2131296325;
 			
-			// aapt resource value: 0x7f09004a
-			public const int search_close_btn = 2131296330;
+			// aapt resource value: 0x7f090044
+			public const int search_bar = 2131296324;
 			
 			// aapt resource value: 0x7f090046
-			public const int search_edit_frame = 2131296326;
+			public const int search_button = 2131296326;
 			
-			// aapt resource value: 0x7f09004c
-			public const int search_go_btn = 2131296332;
+			// aapt resource value: 0x7f09004b
+			public const int search_close_btn = 2131296331;
 			
 			// aapt resource value: 0x7f090047
-			public const int search_mag_icon = 2131296327;
-			
-			// aapt resource value: 0x7f090048
-			public const int search_plate = 2131296328;
-			
-			// aapt resource value: 0x7f090049
-			public const int search_src_text = 2131296329;
+			public const int search_edit_frame = 2131296327;
 			
 			// aapt resource value: 0x7f09004d
-			public const int search_voice_btn = 2131296333;
+			public const int search_go_btn = 2131296333;
+			
+			// aapt resource value: 0x7f090048
+			public const int search_mag_icon = 2131296328;
+			
+			// aapt resource value: 0x7f090049
+			public const int search_plate = 2131296329;
+			
+			// aapt resource value: 0x7f09004a
+			public const int search_src_text = 2131296330;
 			
 			// aapt resource value: 0x7f09004e
-			public const int select_dialog_listview = 2131296334;
+			public const int search_voice_btn = 2131296334;
 			
-			// aapt resource value: 0x7f090039
-			public const int shortcut = 2131296313;
+			// aapt resource value: 0x7f09004f
+			public const int select_dialog_listview = 2131296335;
+			
+			// aapt resource value: 0x7f09003a
+			public const int shortcut = 2131296314;
 			
 			// aapt resource value: 0x7f09000f
 			public const int showCustom = 2131296271;
@@ -1671,23 +1755,23 @@ namespace CrossPlatformApp.Droid
 			// aapt resource value: 0x7f090022
 			public const int src_over = 2131296290;
 			
-			// aapt resource value: 0x7f09004b
-			public const int submit_area = 2131296331;
+			// aapt resource value: 0x7f09004c
+			public const int submit_area = 2131296332;
 			
 			// aapt resource value: 0x7f09000b
 			public const int tabMode = 2131296267;
 			
-			// aapt resource value: 0x7f090033
-			public const int textSpacerNoButtons = 2131296307;
+			// aapt resource value: 0x7f090034
+			public const int textSpacerNoButtons = 2131296308;
 			
-			// aapt resource value: 0x7f09002c
-			public const int title = 2131296300;
+			// aapt resource value: 0x7f09002d
+			public const int title = 2131296301;
+			
+			// aapt resource value: 0x7f090030
+			public const int title_template = 2131296304;
 			
 			// aapt resource value: 0x7f09002f
-			public const int title_template = 2131296303;
-			
-			// aapt resource value: 0x7f09002e
-			public const int topPanel = 2131296302;
+			public const int topPanel = 2131296303;
 			
 			// aapt resource value: 0x7f090008
 			public const int up = 2131296264;
@@ -1892,6 +1976,39 @@ namespace CrossPlatformApp.Droid
 			
 			// aapt resource value: 0x7f0b0010
 			public const int abc_toolbar_collapse_description = 2131427344;
+			
+			// aapt resource value: 0x7f0b0013
+			public const int define_FloatingActionButton = 2131427347;
+			
+			// aapt resource value: 0x7f0b0014
+			public const int library_FloatingActionButton_author = 2131427348;
+			
+			// aapt resource value: 0x7f0b0015
+			public const int library_FloatingActionButton_authorWebsite = 2131427349;
+			
+			// aapt resource value: 0x7f0b001a
+			public const int library_FloatingActionButton_isOpenSource = 2131427354;
+			
+			// aapt resource value: 0x7f0b0017
+			public const int library_FloatingActionButton_libraryDescription = 2131427351;
+			
+			// aapt resource value: 0x7f0b0016
+			public const int library_FloatingActionButton_libraryName = 2131427350;
+			
+			// aapt resource value: 0x7f0b0019
+			public const int library_FloatingActionButton_libraryVersion = 2131427353;
+			
+			// aapt resource value: 0x7f0b0018
+			public const int library_FloatingActionButton_libraryWebsite = 2131427352;
+			
+			// aapt resource value: 0x7f0b001c
+			public const int library_FloatingActionButton_licenseId = 2131427356;
+			
+			// aapt resource value: 0x7f0b001b
+			public const int library_FloatingActionButton_repositoryLink = 2131427355;
+			
+			// aapt resource value: 0x7f0b001d
+			public const int library_name = 2131427357;
 			
 			static String()
 			{
@@ -3027,6 +3144,32 @@ namespace CrossPlatformApp.Droid
 			
 			// aapt resource value: 4
 			public const int DrawerArrowToggle_topBottomBarArrowSize = 4;
+			
+			public static int[] FloatingActionButton = new int[] {
+					2130772167,
+					2130772168,
+					2130772169,
+					2130772170,
+					2130772171,
+					2130772172};
+			
+			// aapt resource value: 2
+			public const int FloatingActionButton_fab_colorDisabled = 2;
+			
+			// aapt resource value: 1
+			public const int FloatingActionButton_fab_colorNormal = 1;
+			
+			// aapt resource value: 0
+			public const int FloatingActionButton_fab_colorPressed = 0;
+			
+			// aapt resource value: 3
+			public const int FloatingActionButton_fab_colorRipple = 3;
+			
+			// aapt resource value: 4
+			public const int FloatingActionButton_fab_shadow = 4;
+			
+			// aapt resource value: 5
+			public const int FloatingActionButton_fab_size = 5;
 			
 			public static int[] LinearLayoutCompat = new int[] {
 					16842927,

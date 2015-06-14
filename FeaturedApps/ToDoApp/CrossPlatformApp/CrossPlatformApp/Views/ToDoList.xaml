@@ -2,14 +2,15 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPlatformApp.ToDoList"
-             xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+             xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+             xmlns:floating="clr-namespace:FAB.Forms;assembly=FAB.Forms">
   <VisualElement.Resources>
     <ResourceDictionary>
       <local:ImagesCache x:Key="SharedImageFactory" />
     </ResourceDictionary>
   </VisualElement.Resources>
 	<ContentView.Content>
-		<StackLayout>
+		<Grid>
 			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
                 IsGroupingEnabled="{Binding Path=IsGrouped}"
                 RefreshCommand="{Binding Path=RefreshCommand}"
@@ -20,6 +21,11 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
-		</StackLayout>
+      <floating:FloatingActionButton x:Name="CreateAction" Size="Normal" Source="plus.png"
+                                     Opacity="0.95"
+                                     NormalColor="#009688"
+                                     VerticalOptions="End" HorizontalOptions="End"
+                                     HasShadow="True" IsVisible="False" />
+    </Grid>
 	</ContentView.Content>
 </ContentView>

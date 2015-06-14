@@ -2,7 +2,9 @@
 {
     using Shared.Infrastructure.Services;
     using Shared.ViewModels;
+    using System;
     using System.Threading.Tasks;
+    using System.Windows.Input;
     using Xamarin.Forms;
 
     public partial class ToDoList
@@ -30,30 +32,72 @@
             DoRefresh();
 		}
 
-        private async void DoRefresh()
+        private void DoRefresh()
         {
+            if (IsFaulted)
+            {
+                StartTrying(1);
+            }
             if (ViewModel == null)
             {
                 return;
             }
-            await ViewModel.LoadItemsAsync().ContinueWith<TodoItemViewModel[]>(HandleResult);
+            ViewModel.LoadItemsAsync().ContinueWith<TodoItemViewModel[]>(HandleResult);
         }
+
+        public bool IsFaulted { get; set; }
+        public bool IsTrying { get; set; }
 
         private TodoItemViewModel[] HandleResult(Task<TodoItemViewModel[]> task)
         {
             if (task.Exception != null)
             {
+                IsFaulted = true;
+                if (IsTrying == false)
+                {
+                    StartTrying(5);
+                    return new TodoItemViewModel[0];
+                }
                 return new TodoItemViewModel[0];
             }
+
+            IsFaulted = false;
+            IsTrying = false;
             var result = task.Result;
             SetupCommands(result);
 
             if (ItemsList.IsRefreshing)
             {
-                ItemsList.EndRefresh();
+                try
+                {
+                    ItemsList.IsRefreshing = false;
+                    ItemsList.EndRefresh();
+                }
+                catch (Exception ex)
+                {
+                }
             }
 
             return result;
+        }
+
+        private void StartTrying(int tries)
+        {
+            IsTrying = true;
+
+            Task.Factory.StartNew(new Action(async delegate
+            {
+                int _retryCount = 0;
+                while (_retryCount < tries && IsFaulted)
+                {
+                    _retryCount++;
+                    await Task.Delay(3000).ContinueWith(task =>
+                    {
+                        ViewModel.LoadItemsAsync().ContinueWith<TodoItemViewModel[]>(HandleResult);
+                    });
+                }
+                IsTrying = false;
+            }));
         }
 
 		private void SetupCommands(TodoItemViewModel[] elements)
@@ -117,6 +161,12 @@
             SetupCommands(newItem);
 
             return newItem;
+        }
+
+        internal void EnableCreateFloatingButton(ICommand command)
+        {
+            CreateAction.IsVisible = true;
+            CreateAction.Command = command;
         }
     }
 }

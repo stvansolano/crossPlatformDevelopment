@@ -25,7 +25,7 @@
     <ContentPage x:Name="CurrentPageHolder" Title="Detail" />
   </MasterDetailPage.Detail>
   <Page.ToolbarItems>
-    <ToolbarItem Text="New" Command="{Binding Path=NewItemCommand}" />
+    <ToolbarItem x:Name="CreateAction" Text="New" Command="{Binding Path=NewItemCommand}" />
     <ToolbarItem Text="Clear" Command="{Binding Path=ClearListCommand}" />
   </Page.ToolbarItems>
 </MasterDetailPage>

@@ -32,7 +32,10 @@
 
             try
             {
-                LoadApplication(new App());
+                var application = new App();
+                LoadApplication(application);
+
+                application.SwitchFloatingTools();
             }
             catch (Exception ex)
             {

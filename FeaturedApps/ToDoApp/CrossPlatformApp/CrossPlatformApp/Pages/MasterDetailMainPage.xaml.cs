@@ -61,5 +61,15 @@
         public ApplicationViewModel ViewModel { get; set; }
         public ToDoList MainList { get; set; }
         public ListManager AllLists { get; set; }
+
+        internal void SwitchFloatingTools()
+        {
+            var createAction = this.FindByName<ToolbarItem>("CreateAction");
+            if (createAction != null)
+            {
+                ToolbarItems.Remove(createAction);
+            }
+            MainList.EnableCreateFloatingButton(createAction.Command);
+        }
     }
 }

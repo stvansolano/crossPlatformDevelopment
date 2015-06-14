@@ -128,6 +128,10 @@
   </Target>
   -->
   <ItemGroup>
+    <Reference Include="FAB.Forms, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FAB.Forms.1.0.0.1\lib\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FAB.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.2.6359\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>

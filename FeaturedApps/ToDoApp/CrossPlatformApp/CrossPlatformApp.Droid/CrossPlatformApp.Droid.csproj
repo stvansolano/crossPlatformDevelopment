@@ -56,6 +56,14 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FAB.Droid, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FAB.Forms.1.0.0.1\lib\MonoAndroid10\FAB.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FAB.Forms, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FAB.Forms.1.0.0.1\lib\MonoAndroid10\FAB.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -248,6 +256,26 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fab_shadow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fab_shadow_mini.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fab_shadow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fab_shadow_mini.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fab_shadow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fab_shadow_mini.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fab_shadow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fab_shadow_mini.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\plus.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fab_shadow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fab_shadow_mini.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\plus.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrossPlatformApp\CrossPlatformApp.csproj">

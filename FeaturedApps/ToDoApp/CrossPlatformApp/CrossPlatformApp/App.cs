@@ -28,5 +28,10 @@
 		{
 			// Handle when your app resumes
 		}
-	}
+
+        public void SwitchFloatingTools()
+        {
+            _mainPage.CurrentPage.SwitchFloatingTools();
+        }
+    }
 }
