@@ -1,7 +1,7 @@
 # Cross Platform Development with Xamarin Forms
-==============
 A set of examples for developing apps across different mobile OS including Android, iOS(in progress) and Windows Phone (in progress) using Xamarin Forms.
 
+==============
 
 Index:
 - Hello World
@@ -29,7 +29,7 @@ isaacdaniel.solano@uned.cr
 
 A gorgeous responsive theme for Hexo blog framework 
 
-![Tranquilpeak](http://louisbarranqueiro.github.io/tranquilpeak-hexo-theme/2015/06/15/Welcome-to-the-new-Tranquilpeak/tranquilpeak.png)
+![me](https://avatars3.githubusercontent.com/u/3009519?v=3&s=96)
 
 ## Summary ##
 
@@ -46,48 +46,21 @@ A gorgeous responsive theme for Hexo blog framework
 
 ## General ##
 
-- **Author** : Louis Barranqueiro
-- **Latest version** : 1.1.1  
-- **Compatibility** : Hexo v3.0.0 or higher  
+- **Author** : Esteban Solano Granados
+- **Latest version** : 1.0.0  
 
 ## Features ##
 
 **General features :**  
-- Fully responsive  
-- Optimized for tablets & mobiles  
-- Configurable menu of the sidebar  
-- Pages to filter tags, categories and archives  
-- Background cover image  
-- Beautiful about page  
-  
-  
-**Posts features :**  
-- Thumbnail image  
-- Cover image  
-- Responsive videos & images  
-- Sharing options  
-- Navigation menu  
-- GitHub theme for code highlighting  
-- Image gallery  
-  
-  
-**Integrated services :**  
-- Disqus  
-- Google analytics  
-- Gravatar  
-- Swiftype  
-  
-  
+- Coming soon
+
 ## Quick start ##
 
-##### For people who want to use the original version of Tranquilpeak (users) 
-1. Download the latest version ready for production utilisation here : [tranquilpeak-hexo-theme-built-for-production-1.1.1]
-(https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases/download/v1.1.1/tranquilpeak-hexo-theme-built-for-production-1.1.1.zip) or choose an other version here : [all releases](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/releases)  
-2. Follow [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md) to install and configure the theme  
+##### More details (users) 
+1. Coming soon
 
-##### For people who want to create their own version of tranquilpeak (developers)
-1. Run `git clone https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme.git`  
-2. Follow [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md) to edit and build the theme  
+##### More details
+1. Run `git clone https://github.com/stvansolano/crossPlatformDevelopment.git`  
 
 ## Demo  ##
 
@@ -111,16 +84,7 @@ I will judge if the theme is enough customized to be added into showcase.
 
 ## Documentation ##
 
-If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
-
-##### For users 
-To install and configure the theme, consult the following documentation : [user documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/user.md)  
-##### For developers
-To understand better the code and edit  the theme, consult the following documentation : [developer documentation](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/docs/developer.md)
-
-## Contributing ##
-
-[![Join the chat at https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LouisBarranqueiro/tranquilpeak-hexo-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+More details [stvansolano](https://github.com/stvansolano/)
 
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
@@ -128,4 +92,4 @@ All pull requests must be done on the `dev` branch.
 
 ## License ##
 
-Traanquilpeak-hexo-theme is released under the terms of the [GNU General Public License v3.0](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/blob/master/LICENSE)
+Released under the terms of the [GNU General Public License v3.0](https://github.com/stvansolano/crossPlatformDevelopment/blob/master/LICENSE)
