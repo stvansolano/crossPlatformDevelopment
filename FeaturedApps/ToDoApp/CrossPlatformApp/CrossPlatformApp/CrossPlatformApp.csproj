@@ -42,7 +42,6 @@
     <Compile Include="CustomControls\AccordionView\AccordionView.xaml.cs">
       <DependentUpon>AccordionView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\AccordionView\Example.cs" />
     <Compile Include="CustomControls\EditableLabel.xaml.cs">
       <DependentUpon>EditableLabel.xaml</DependentUpon>
     </Compile>

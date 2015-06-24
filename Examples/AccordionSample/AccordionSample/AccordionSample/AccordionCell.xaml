@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="AccordionSample.AccordionCell"
+          xmlns:local="clr-namespace:AccordionSample;assembly=AccordionSample">
+  <ContentView>
+    <Grid Padding="5">
+      <StackLayout Orientation="Vertical"
+                   Padding="0,0,20,0">
+        <Label Text="{Binding Path=Title}" FontAttributes="Bold" />
+        <Label Text="{Binding Path=Content}">
+          <Label.Style>
+            <Style TargetType="StackLayout">
+              <Style.Triggers>
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding Path=IsSelected}" Value="False">
+                  <Setter Property="HeightRequest" Value="0" />
+                </DataTrigger>
+              </Style.Triggers>
+            </Style>
+          </Label.Style>
+        </Label>
+      </StackLayout>
+      <Image Source="ic_chevron.png"
+             HorizontalOptions="EndAndExpand">
+        <Image.Style>
+          <Style TargetType="Image">
+            <Style.Triggers>
+              <DataTrigger TargetType="Image"
+                           Binding="{Binding Path=IsSelected}" Value="True">
+                <Setter Property="Rotation" Value="90" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </Image.Style>
+      </Image>
+    </Grid>
+  </ContentView>
+</ViewCell>
