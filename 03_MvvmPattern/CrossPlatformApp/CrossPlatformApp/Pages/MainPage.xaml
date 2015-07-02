@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatformApp.Pages.MainPage">
+  <ContentView>
+    <StackLayout Orientation="Vertical">
+      <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+      <ListView ItemsSource="{Binding Path=Items}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid>
+                <Label Text="{Binding Path=Text}"
+                       HorizontalOptions="StartAndExpand" />
+                <Button Command="{Binding Path=LikeCommand}" Text="{Binding Path=Likes}"
+                        HorizontalOptions="End" />
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentView>
+</ContentPage>

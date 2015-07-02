@@ -6,6 +6,16 @@
     {
         public App()
         {
+            string yourText = "[evaluating content]";
+            const string REGEX = "(?<=\n)|(?=\n)";
+            
+            var results = new System.Text.RegularExpressions.Regex(REGEX).Matches(yourText);
+
+            foreach (System.Text.RegularExpressions.Match match in results)
+            {
+                string value = match.Value;
+            }
+            
             MainPage = new NavigationPage(new AccordionViewExample());
         }
 
