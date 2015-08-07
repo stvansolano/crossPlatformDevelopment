@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossPlatformApp.DictionaryBindingExample">
+	<ContentPage.Content>
+	<ListView x:Name="listView">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+            <ContentView>
+                <Label Text="{Binding Path=Key}" />
+                <Label Text="{Binding Path=Value}" />
+            </ContentView>
+          </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+	</ContentPage.Content>
+</ContentPage>
