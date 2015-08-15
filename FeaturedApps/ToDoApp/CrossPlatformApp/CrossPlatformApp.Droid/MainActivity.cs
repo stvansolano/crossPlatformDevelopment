@@ -12,7 +12,7 @@
     using Android.Support.V4.View;
 
     [Activity(
-        Label = "My To-Do list showcase",
+        Label = "My Tasks",
         Icon = "@drawable/icon",
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
@@ -49,10 +49,11 @@
             ActionBar.DisplayOptions = ActionBarDisplayOptions.ShowCustom;
             ActionBar.SetHomeButtonEnabled(true);
             */
+            
             /*if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
-            {
-                ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
-            }*/
+            {*/
+            ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
+            //}
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)

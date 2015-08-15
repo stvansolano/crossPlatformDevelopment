@@ -20,7 +20,7 @@
             }
 
             ItemsList.RefreshCommand = new Command(DoRefresh);
-            Title = "My TODO list";
+            Title = "My Tasks";
 		}
 
         public IMessageService MessageService { get; set; }

@@ -2,7 +2,8 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="CrossPlatformApp.Pages.MasterDetailMainPage"
-                  xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+                  xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+                  Title="{Binding Path=Title}">
   <MasterDetailPage.Resources>
     <ResourceDictionary>
       <local:ToDoList x:Key="MainList" />
@@ -11,12 +12,18 @@
   </MasterDetailPage.Resources>
   <MasterDetailPage.Master>
     <ContentPage Title="Master"
-                 BackgroundColor="#333333"
                  Icon="settings.png">
       <ContentView>
         <StackLayout VerticalOptions="FillAndExpand">
+          <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+              <OnPlatform.iOS> 10, 10, 10, 10 </OnPlatform.iOS>
+              <OnPlatform.Android> 8, 8, 8, 8 </OnPlatform.Android>
+              <OnPlatform.WinPhone> 10, 10, 10, 10 </OnPlatform.WinPhone>
+            </OnPlatform>
+          </StackLayout.Padding>
+          <Button Text="My Tasks" x:Name="ManageTasksButton" />
           <Button Text="Manage lists" x:Name="ManageListButton" />
-          <Button Text="Showcase" />
         </StackLayout>
       </ContentView>
     </ContentPage>

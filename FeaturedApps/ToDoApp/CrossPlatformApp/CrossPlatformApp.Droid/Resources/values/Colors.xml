@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?> <resources>
   <!-- Top colors -->
-  <color name="colorPrimaryDark">#009688</color>
-  <color name="colorPrimary">#4DB6AC</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorPrimary">#3F51B5</color>
 
   <!-- Text colors -->
-  <color name="textColorPrimary">#004D40</color>
+  <color name="textColorPrimary">#BDBDBD</color>
   <color name="colorAccent">#B455B6</color>
 
   <!-- Background and bars -->

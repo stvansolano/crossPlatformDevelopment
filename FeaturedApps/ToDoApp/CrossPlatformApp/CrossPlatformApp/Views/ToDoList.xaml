@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrossPlatformApp.ToDoList"
              xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
-             xmlns:floating="clr-namespace:FAB.Forms;assembly=FAB.Forms">
+             xmlns:floating="clr-namespace:FAB.Forms;assembly=FAB.Forms"
+             Padding="{DynamicResource MainControlPadding}">
   <VisualElement.Resources>
     <ResourceDictionary>
       <local:ImagesCache x:Key="SharedImageFactory" />
@@ -14,6 +15,7 @@
 			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
                 IsGroupingEnabled="{Binding Path=IsGrouped}"
                 RefreshCommand="{Binding Path=RefreshCommand}"
+                BackgroundColor="Transparent"
                 HasUnevenRows="True">
         <ListView.ItemTemplate>
 						<DataTemplate>
@@ -21,11 +23,14 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
-      <floating:FloatingActionButton x:Name="CreateAction" Size="Normal" Source="plus.png"
-                                     Opacity="0.95"
-                                     NormalColor="#009688"
-                                     VerticalOptions="End" HorizontalOptions="End"
-                                     HasShadow="True" IsVisible="False" />
+      <Grid Padding="0,0,10,10"
+            VerticalOptions="End" HorizontalOptions="End">
+        <floating:FloatingActionButton x:Name="CreateAction" Size="Normal" Source="plus.png"
+                                       Opacity="0.95"
+                                       NormalColor="#448AFF"
+                                       HasShadow="True" IsVisible="False"
+                                     />
+      </Grid>
     </Grid>
 	</ContentView.Content>
 </ContentView>

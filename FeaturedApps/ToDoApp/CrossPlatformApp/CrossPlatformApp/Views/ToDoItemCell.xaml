@@ -2,49 +2,54 @@
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
           x:Class="CrossPlatformApp.ToDoItemCell"
-          xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp">
+          xmlns:local="clr-namespace:CrossPlatformApp;assembly=CrossPlatformApp"
+          Height="60">
   <ViewCell.View>
     <Grid HorizontalOptions="Start"
           VerticalOptions="FillAndExpand"
-          Padding="5,0,5,0">
+          Padding="10,0,5,0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="0.1*" />
       </Grid.ColumnDefinitions>
-      <Label Text="..." Grid.Column="0" XAlign="End" YAlign="Center" />
-      <StackLayout Orientation="Horizontal"
-                   Grid.Column="0"
-                   HeightRequest="50"
+
+      <StackLayout Grid.Column="0"
                    Spacing="10"
-                   Padding="5,0,5,0">
-        <Switch x:Name="itemSwitch" IsToggled="{Binding Path=IsChecked}" IsVisible="False" />
-        
-        <Label x:Name="ItemLabel" Text="{Binding Path=ItemName}" YAlign="Center" />
-      </StackLayout>
-      <StackLayout Grid.Column="1" Orientation="Horizontal"
-                   HorizontalOptions="EndAndExpand"
-                   VerticalOptions="Center"
-                   Padding="0,0,2,0">
+                   Orientation="Horizontal">
         <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
                            local:ImageFactory.CachedSource="uncheck.png"
                            Command="{Binding Path=ToggleCommand}"
-                           HeightRequest="20">
+                           HeightRequest="50"
+                           WidthRequest="50">
           <VisualElement.Triggers>
             <DataTrigger TargetType="Image"
-                          Binding="{Binding Source={x:Reference itemSwitch}, Path=IsToggled}" Value="True">
+                          Binding="{Binding Path=IsChecked}" Value="True">
               <Setter Property="local:ImageFactory.CachedSource" Value="check.png" />
             </DataTrigger>
           </VisualElement.Triggers>
         </local:TappedImage>
-
-        <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
-                           local:ImageFactory.CachedSource="ic_delete.png"
-                           Command="{Binding Path=DeleteCommand}" />
-        
-        <local:TappedImage local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
-                           local:ImageFactory.CachedSource="ic_chevron.png"
-                           Command="{Binding Path=NavigateCommand}" />
+      
+        <StackLayout Orientation="Vertical"
+                     HeightRequest="50"
+                     Padding="10,0,0,0"
+                     VerticalOptions="Center"
+                     HorizontalOptions="StartAndExpand">
+          <Label Text="{Binding Path=ItemName}" FontAttributes="Bold" 
+                 LineBreakMode="TailTruncation"  
+                 />
+          <Label Text="{Binding Path=Description}"
+                 LineBreakMode="TailTruncation"
+                 />
+        </StackLayout>
       </StackLayout>
+      
+      <local:TappedImage Grid.Column="1"
+                         local:ImageFactory.SharedFactory="{DynamicResource SharedImageFactory}"
+                         local:ImageFactory.CachedSource="ic_delete.png"
+                         VerticalOptions="Center"
+                         Command="{Binding Path=DeleteCommand}"
+                         />
+
     </Grid>
   </ViewCell.View>
 </ViewCell>

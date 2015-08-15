@@ -5,29 +5,29 @@
     using Shared.WebServices;
     using Xamarin.Forms;
 
-	public class App : Application
-	{
+    public partial class App
+    {
         private NavigationPage<MasterDetailMainPage> _mainPage;
-		
+
         public App()
-		{
+        {
             MainPage = _mainPage = new NavigationPage<MasterDetailMainPage>();
-		}
+        }
 
-		protected override void OnStart()
-		{
-			_mainPage.CurrentPage.Start();
-		}
+        protected override void OnStart()
+        {
+            _mainPage.CurrentPage.Start();
+        }
 
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
 
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
-		}
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
 
         public void SwitchFloatingTools()
         {

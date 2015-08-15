@@ -25,27 +25,8 @@
     <TableView.Root>
       <TableRoot>
         <TableSection Title="Task Details">
-          <EntryCell Label="Task Name"/>
-          <ViewCell>
-            <ViewCell.View>
-              <ContentView>
-                <Label Text="Task Name" />
-                <Entry  Placeholder="Your task name here" Text="{Binding Path=ItemName}" />
-              </ContentView>
-            </ViewCell.View>
-          </ViewCell>
-          <ViewCell>
-            <ViewCell.View>
-              <ContentView>
-              <Label Text="Details" />  
-              </ContentView>
-            </ViewCell.View>
-          </ViewCell>
-          <ViewCell>
-            <ContentView>
-              <Editor Text="{Binding Path=Description}" />    
-            </ContentView>
-          </ViewCell>
+          <EntryCell Label="Task Name" Text="{Binding Path=ItemName}"/>
+          <EntryCell Label="Details" Text="{Binding Path=Description}"/>
         </TableSection>
         <TableSection Title="Status">
           <ViewCell>

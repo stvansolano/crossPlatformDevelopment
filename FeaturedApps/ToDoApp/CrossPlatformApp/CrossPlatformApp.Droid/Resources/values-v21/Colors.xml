@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?> <resources>
   <!-- Top colors -->
-  <color name="colorPrimaryDark">#9E9E9E</color>
-  <color name="colorPrimary">#424242</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorPrimary">#3F51B5</color>
   
   <!-- Text colors -->
   <color name="textColorPrimary">#BDBDBD</color>
   <color name="colorAccent">#B455B6</color>
   
   <!-- Background and bars -->
-  <color name="windowBackground">#FAFAFA</color>
+  <color name="windowBackground">#FFFFFF</color>
   <color name="navigationBarColor">#FF6D00</color><!--212121-->
-  <color name="statusBarColor">#9E9E9E</color>
+  <color name="statusBarColor">#C5CAE9</color>
+
+  <!--sampled-->
+  <color name="primary">#3F51B5</color>
+  <color name="primary_dark">#303F9F</color>
+  <color name="primary_light">#C5CAE9</color>
+  <color name="accent">#607D8B</color>
+  <color name="primary_text">#212121</color>
+  <color name="secondary_text">#727272</color>
+  <color name="icons">#FFFFFF</color>
+  <color name="divider">#B6B6B6</color>
 </resources>

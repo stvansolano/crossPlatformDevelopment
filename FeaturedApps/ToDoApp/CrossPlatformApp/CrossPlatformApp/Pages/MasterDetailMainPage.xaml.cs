@@ -35,19 +35,27 @@
             ViewModel.NewItemCommand = new Command(() =>
             {
                 var newItem = MainList.CreateNew();
-                CurrentPageHolder.Content = MainList;
+                ShowCurrentView(MainList.Title, MainList);
             });
 
             ViewModel.ClearListCommand = new Command(() =>
             {
                 ViewModel.CurrentList.Elements.Clear();
-                CurrentPageHolder.Content = MainList;
+                ShowCurrentView(MainList.Title, MainList);
             });
 
             BindingContext = ViewModel;
 
-            CurrentPageHolder.Content = MainList;
-            ManageListButton.Clicked += delegate { CurrentPageHolder.Content = AllLists; };
+            ShowCurrentView(MainList.Title, MainList);
+
+            ManageTasksButton.Clicked += delegate { ShowCurrentView(MainList.Title, MainList); };
+            ManageListButton.Clicked += delegate { ShowCurrentView(AllLists.Title, AllLists); };
+        }
+
+        private void ShowCurrentView(string title, View content) 
+        {
+            ViewModel.Title = title;
+            CurrentPageHolder.Content = content;
         }
 
         internal void Start()
