@@ -29,13 +29,20 @@
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) =>
+            {
+                if (!string.IsNullOrWhiteSpace(e.View.StyleId))
+                {
+                    e.NativeView.ContentDescription = e.View.StyleId;
+                }
+            };
 
             try
             {
                 var application = new App();
                 LoadApplication(application);
 
-                application.SwitchFloatingTools();
+                //application.SwitchFloatingTools();
             }
             catch (Exception ex)
             {
