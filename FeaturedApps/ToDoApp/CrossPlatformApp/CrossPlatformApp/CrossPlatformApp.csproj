@@ -63,9 +63,6 @@
     <Compile Include="Pages\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TabbedMainPage.xaml.cs">
-      <DependentUpon>TabbedMainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\MasterDetail.xaml.cs">
       <DependentUpon>MasterDetail.xaml</DependentUpon>
     </Compile>
@@ -85,12 +82,6 @@
     <Compile Include="Views\ToDoItemCell.xaml.cs">
       <DependentUpon>ToDoItemCell.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\TabbedMainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ToDoList.xaml">
