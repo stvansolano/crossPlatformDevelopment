@@ -12,7 +12,8 @@
   </VisualElement.Resources>
 	<ContentView.Content>
 		<Grid>
-			<ListView x:Name="ItemsList" ItemsSource="{Binding Path=Elements}"
+			<ListView x:Name="ItemsList" StyleId="ItemsList"
+				ItemsSource="{Binding Path=Elements}"
                 IsGroupingEnabled="{Binding Path=IsGrouped}"
                 RefreshCommand="{Binding Path=RefreshCommand}"
                 BackgroundColor="Transparent"

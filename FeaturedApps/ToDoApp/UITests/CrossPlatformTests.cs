@@ -3,7 +3,7 @@
     using NUnit.Framework;
     using Xamarin.UITest;
 
-    public class CrossPlatformTests
+    public abstract class CrossPlatformTests
     {
         protected IApp App { get; set; }
 
@@ -16,6 +16,36 @@
         public virtual void SetUp()
         {
             Assert.Ignore("This class requires a platform-specific bootstrapper to override the `SetUp` method");
+        }
+
+        [Test]
+        public void AppLaunches()
+        {
+            //App.ScrollDown();
+            App.Screenshot("First screen.");
+
+            //App.Tap(x => x.Marked("ItemsList").Index(0));
+
+            //App.Screenshot("Tapped list item");
+        }
+
+        //[Test]
+        public void ItemsNavigation()
+        {
+            App.Screenshot("First screen.");
+
+            App.ScrollDown();
+            App.Screenshot("First screen.");
+
+            App.Tap(x => x.Marked("ItemsList").Index(0));
+
+            App.Screenshot("Tapped list item");
+        }
+
+        //[Test]
+        public void DeleItemTest()
+        {
+            App.Repl();
         }
     }
 }
