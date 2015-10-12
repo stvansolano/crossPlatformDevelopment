@@ -33,11 +33,9 @@
     <Reference Include="System" />
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-	  <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.UITest, Version=1.0.0.222, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.UITest.1.0.0.222-dev\lib\Xamarin.UITest.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>..\packages\Xamarin.UITest.1.1.1\lib\Xamarin.UITest.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -48,9 +46,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\CrossPlatformApp\CrossPlatformApp.Droid\CrossPlatformApp.Droid.csproj">
-      <Project>{C0012770-781B-409F-9703-36786AF16D10}</Project>
-      <Name>CrossPlatformApp.Droid</Name>
+    <ProjectReference Include="..\CrossPlatformApp\CrossPlatformApp.iOS\CrossPlatformApp.iOS.csproj">
+      <Project>{0DF1720B-AB05-47DE-9813-3CD878463412}</Project>
+      <Name>CrossPlatformApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
@@ -64,10 +62,4 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
 </Project>

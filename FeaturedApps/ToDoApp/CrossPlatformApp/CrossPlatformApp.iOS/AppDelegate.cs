@@ -25,6 +25,9 @@ namespace CrossPlatformApp.iOS
 			global::Xamarin.Forms.Forms.Init();
 			LoadApplication(new App());
 
+			#if DEBUG
+			Xamarin.Calabash.Start();
+			#endif
 			return base.FinishedLaunching(app, options);
 		}
 	}
